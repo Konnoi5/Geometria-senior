@@ -10,7 +10,10 @@
 
 $$\text{distanza}=\frac{Ap+Bq+C}{\sqrt{A^2+B^2}}$$
 
-\item  Potenza di un punto rispetto a una circonferenza
+\item  Se $\Gamma$ è un cerchio di equazione $f(x,y)=x^2+y^2+ax+by+c=0$ e $P=(s,t)$ un punto del piano, la potenza di $P$ rispetto a $\Gamma$ si ottiene sostituendo $s,t$ nell'equazione della circonferenza:\\
+$$\text{Pow}_P(\Gamma)=f(s,t)=s^2+t^2+as+bt+c$$
+
+\item Formule di sdoppiamento
 
 \item Dati due punti $A$ e $B$, trovare il luogo di punti $C$ tali che $AC/BC=\lambda$ costante fissata.\\
 \begin{sol}
@@ -20,10 +23,14 @@ $$\text{distanza}=\frac{Ap+Bq+C}{\sqrt{A^2+B^2}}$$
  è un cerchio centrato in $(-\frac{1}{\lambda^2-1},0)$.
 \end{sol}
 
+\item \textbf{Luogo degli ortocentri} Sia $\Gamma$ una circonferenza fissa e sia $BC$ una corda. Sia $A$ un punto su $\Gamma$ e sia $H$ l'ortocentro di $ABC$.\\
+Determinare al variare di $A$ su $\Gamma$ il luogo geometrico descritto da $H$.
+
+
 \suspend{enumerate}
 \textbf{Vettori}
 \resume{enumerate}
-\item \textbf{Engel 12 - E6} $ABCD$ quadrilatero, $AC\perp BD$ se e solo se $AD^2+BC^2=AB^2+CDì2$.\\
+\item \textbf{Engel 12 - E6} $ABCD$ quadrilatero, $AC\perp BD$ se e solo se $AD^2+BC^2=AB^2+CD^2$.\\
 \begin{sol}
  In vettori, si vuole $(A-C)\cdot (B-D) = 0$ sse $(A-B)^2+(C-D)^2=(A-D)^2+(B-C)^2$.
 \end{sol}
@@ -32,6 +39,8 @@ $$\text{distanza}=\frac{Ap+Bq+C}{\sqrt{A^2+B^2}}$$
 \begin{sol}
  $M=(A+B)/2$, $MN=PQ$ si traduce come $(\frac{A+B}{2}-\frac{C+D}{2})^2=(\frac{B+C}{2}-\frac{A+D}{2})^2$, facendo i conti esce la stessa cosa.
 \end{sol}
+
+\item \textbf{Teorema di Varignon} $ABCD$ quadrilatero, $M,N,P,Q$ punti medi di $AB,BC,CD,DA$. Allora $MNPQ$ è un parallelogramma.
 
 
 
@@ -50,9 +59,9 @@ $A$ nella circonferenza circoscritta ad $ABC$.
 $$AB^2\cdot PC + AC^2 \cdot BP = BC \cdot BP \cdot PC + AP^2 \cdot BC$$\\
 Caso particolare: lunghezza della mediana è $AM=\frac{1}{2}\sqrt{2b^2+2c^2-a^2}$.
 
-\item \textbf{Nested cevians} Sia $ABC$ un triangolo, $AD,BE,CF$ ceviane concorrenti e $P,Q,R$ sui lati di $DEF$ in modo che $DP,EQ,FR$ concorrano anch'esse. Allora anche $AP,BQ,CR$ concorrono.
+\item \textbf{Ceviane nestate} Sia $ABC$ un triangolo, $AD,BE,CF$ ceviane concorrenti e $P,Q,R$ sui lati di $DEF$ in modo che $DP,EQ,FR$ concorrano anch'esse. Allora anche $AP,BQ,CR$ concorrono.
 
-\item Triangolo $ABC$, sia $Y$ punto su $BC$ tale che $AY=CY$, sia $Z$ sul segmento $AY$ in modo che $AB=CZ$ e infine sia $X=CZ\cap AB$.\\
+\item  Triangolo $ABC$, sia $Y$ punto su $BC$ tale che $AY=CY$, sia $Z$ sul segmento $AY$ in modo che $AB=CZ$ e infine sia $X=CZ\cap AB$.\\
 Dimostrare che $BXYZ$ è ciclico.\\
 \begin{sol}
  Let $\angle CAY = \angle ACY = \alpha$, $\angle BAY = \beta$.
@@ -62,9 +71,10 @@ But in $\triangle ACY$ we have $AC = \frac{AY \cdot \sin 2\alpha}{\sin \alpha}$.
 Therefore $\sin \angle AZC = \sin(2\alpha + \beta)$. If $\angle AZC = 180^{\circ}-2\alpha-\beta$, then $\angle ACZ = \alpha + \beta$, which is impossible. So $\angle XZY = \angle AZC = 2\alpha + \beta = 180^{\circ}-\angle XBY$, which completes the proof.
 \end{sol}
 
-\item Sia $ABCD$ un parallelogramma, si prendano $X$ sul lato $AB$ e $Y$ su $BC$ in modo che $AX=CY$. Sia $T=AY\cap CX$. Dimostrare che $DT$ biseca l'angolo $\widehat{ADC}$.\\
+\item \textbf{Germania BWM 2003, Round 1 - 3}Sia $ABCD$ un parallelogramma, si prendano $X$ sul lato $AB$ e $Y$ su $BC$ in modo che $AX=CY$. Sia $T=AY\cap CX$. Dimostrare che $DT$ biseca l'angolo $\widehat{ADC}$.\\
 \begin{sol}
- 
+ Teorema dei seni su $AXT$ e $BYT$ per ottenere $\frac{\sin\widehat AXT}{AT}=\frac{\sin\widehat ATX}{AX}=\frac{\sin\widehat BTY}{BY}=\frac{\sin\widehat BYT}{BT}$.
+ Poi $\widehat AXT+\widehat TCD=180$, quindi i seni uguali. Si conclude facendo teorema dei seni su $\triangle ATD$ e $\triangle CTD$.
 \end{sol}
 
 
@@ -82,16 +92,34 @@ $$\frac{a-c}{b-c}=\frac{\overline{a}-\overline{c}}{\overline{b}-\overline{c}}$$
 $$\frac{a-c}{b-c}= - \frac{\overline{a}-\overline{c}}{\overline{b}-\overline{c}}$$
 
 
+\item \textbf{Eserciziario Senior 17, G2 - 10} (\emph{Proposto in GB2})
+
+\item \textbf{Teorema di Napoleone} Sia $ABC$ un triangolo e si costruisca un triangolo equilatero su ciascuno dei lati di $ABC$, esterno ad esso. Siano $O_A,O_B,O_C$ i centri dei tre triangoli. Dimostrare che:
+\begin{itemize}
+\item $O_AO_BO_C$ è un triangolo equilatero.
+\item le rette $AO_A,BO_B,CO_C$ concorrono.
+\end{itemize}
+
+
+\begin{sol} Siano $A_1,B_1,C_1$ i vertici dei triangoli equilateri. $BA=\sqrt{3}BO_C$ e analogamente per gli altri lati. Una rotazione di 30 centrata in $B$ manda $BO_C$ in $BA$ e $BO_A$ in $BA_1$. Il triangolo $BO'_CO_A'$ è simile a $BAA_1$, quindi per Talete $O_CO_A=O'_CO'_A=\frac{1}{\sqrt{3}}AA_1=O_BO_C$. Quindi i tre lati sono uguali.
+
+Si fa benissimo in complessi (per G1). Su cut-the-knot ci sono tanti approcci.\cite{napoleoncomplex}
+\end{sol}
+            
+\item \textbf{Teorema di Vecten } Sia $ABC$ un triangolo e si costruisca un quadrato su ciascuno dei lati di $ABC$, esterno ad esso. Chiamati $O_A,O_B,O_C$ i centri dei tre quadrati. Dimostrare che:
+\begin{itemize}
+ \item $O_AO_BO_C$ è un triangolo equilatero.
+ \item le rette $AO_A,BO_B,CO_C$ concorrono.
+ \item I segmenti $AO_A$ e $O_BO_C$ sono uguali e perpendicolari tra loro
+\end{itemize}
 
 
 \suspend{enumerate}
 \textbf{Vario}
 \resume{enumerate}
 
-\item Teoremi di Napoleone e Vecten (enunciato in G2)
 
-\item \textbf{Luogo degli ortocentri} Sia $\Gamma$ una circonferenza fissa e sia $BC$ una corda. Sia $A$ un punto su $\Gamma$ e sia $H$ l'ortocentro di $ABC$.\\
-Determinare al variare di $A$ su $\Gamma$ il luogo geometrico descritto da $H$.
+
 
 \item \textbf{Eserciziario Senior 2017, G1 - 12} Sia dato un triangolo $ABC$ e si fissino i punti $A'$,$B'$,$C'$ sui lati opposti ai vertici $A$, $B$,
 $C$, rispettivamente, in modo che le rette $AA'$ , $BB'$ , $CC'$ siano concorrenti in un punto $P$ interno al triangolo. Sia $d$ il diametro del cerchio circoscritto al triangolo $ABC$, e sia $S'$ l’area del triangolo $A'B'C'$.\\
@@ -126,14 +154,8 @@ Dimostrare che $d \cdot S' = AB'\cdot BC'\cdot CA'$.
        \textbf{Rotazioni}
        \resume{enumerate}
       
-       \item \textbf{Teorema di Napoleone} Sia $ABC$ un triangolo e si costruisca un triangolo equilatero su ciascuno dei lati di $ABC$, esterno ad esso. Chiamati $O_A,O_B,O_C$ i centri dei tre triangoli, dimostrare che $O_AO_BO_C$ è un triangolo equilatero.
-     
-      \begin{sol}Siano $A_1,B_1,C_1$ i vertici dei triangoli equilateri. $BA=\sqrt{3}BO_C$ e analogamente per gli altri lati. Una rotazione di 30 centrata in $B$ manda $BO_C$ in $BA$ e $BO_A$ in $BA_1$. Il triangolo $BO'_CO_A'$ è simile a $BAA_1$, quindi per Talete $O_CO_A=O'_CO'_A=\frac{1}{\sqrt{3}}AA_1=O_BO_C$. Quindi i tre lati sono uguali.
-     
-      Si fa benissimo in complessi (per G1). Su cut-the-knot ci sono tanti approcci.\cite{napoleoncomplex}
-      \end{sol}
-            
-      \item \textbf{Teorema di Vecten } Sia $ABC$ un triangolo e si costruisca un quadrato su ciascuno dei lati di $ABC$, esterno ad esso. Chiamati $O_A,O_B,O_C$ i centri dei tre quadrati, dimostrare che $O_AO_BO_C$ è un triangolo equilatero.
+  \item Teoremi di Napoleone e Vecten (enunciato in G1), la parte che si fa con le rotazioni è dimostrare che il triangolo dei centri è equilatero.
+
       
       \item \textbf{Eserciziario Senior 17, G2 - 10} Siano $ABMN$ e $BCQP$ i quadrati costruiti sui lati $AB$ e $BC$ di un triangolo, esternamente al triangolo stesso.
       Dimostrare che i centri di tali quadrati ed i punti medi di $AC$ e $MP$ sono i vertici di un quadrato.
