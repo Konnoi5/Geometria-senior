@@ -71,10 +71,11 @@ But in $\triangle ACY$ we have $AC = \frac{AY \cdot \sin 2\alpha}{\sin \alpha}$.
 Therefore $\sin \angle AZC = \sin(2\alpha + \beta)$. If $\angle AZC = 180^{\circ}-2\alpha-\beta$, then $\angle ACZ = \alpha + \beta$, which is impossible. So $\angle XZY = \angle AZC = 2\alpha + \beta = 180^{\circ}-\angle XBY$, which completes the proof.
 \end{sol}
 
-\item \textbf{Germania BWM 2003, Round 1 - 3}Sia $ABCD$ un parallelogramma, si prendano $X$ sul lato $AB$ e $Y$ su $BC$ in modo che $AX=CY$. Sia $T=AY\cap CX$. Dimostrare che $DT$ biseca l'angolo $\widehat{ADC}$.\\
+\item \textbf{Germania BWM 2003, Round 1 - 3} Sia $ABCD$ un parallelogramma, si prendano $X$ sul lato $AB$ e $Y$ su $BC$ in modo che $AX=CY$. Sia $T=AY\cap CX$. Dimostrare che $DT$ biseca l'angolo $\widehat{ADC}$.\\
 \begin{sol}
  Teorema dei seni su $AXT$ e $BYT$ per ottenere $\frac{\sin\widehat AXT}{AT}=\frac{\sin\widehat ATX}{AX}=\frac{\sin\widehat BTY}{BY}=\frac{\sin\widehat BYT}{BT}$.
- Poi $\widehat AXT+\widehat TCD=180$, quindi i seni uguali. Si conclude facendo teorema dei seni su $\triangle ATD$ e $\triangle CTD$.
+ Poi $\widehat AXT+\widehat TCD=180$, quindi i seni uguali. Si conclude facendo teorema dei seni su $\triangle ATD$ e $\triangle CTD$.\\
+ Sintetica: $AY\cap CD=Z$, similitudine e teorema della bisettrice.
 \end{sol}
 
 
@@ -406,21 +407,39 @@ Dimostrare che $d \cdot S' = AB'\cdot BC'\cdot CA'$.
 
 \subsection{GM - 2, Esercizi}
 \begin{enumerate}
-	\item Siano $\gamma_1$ e $\gamma_2$ due circonferenze di centri $O_1$ e $O_2$ rispettivamente. Siano $S_1$ e $S_2$ rispettivamente il centro di similitudine interno ed esterno di $\gamma_1$ e $\gamma_2$.
+
+	\item \textbf{[Unicità del quarto armonico]}
+	Assumiamo che $A$, $B$, $C$, $D_1$ e $D_2$ siano conciclici o allineati.
 	
-	Mostrare che $(O_1,O_2;S_1,S_2)=-1$.
+	Mostrare che se $(A,B;C,D_1)=(A,B;C,D_2)$ allora $D_1 \equiv D_2$.
+	
+	\item \textbf{Permutazioni in un birapporto} Siano $A,B,C,D$ quattro punti tali che $(A,B;C,D)=k$. Dimostrare che:
+	\begin{itemize}
+	 \item $(A,B;C,D)=(B,A;D,C)=(C,D;A,B)=(D,C;B,A)=k$
+	 \item $(A,B;D,C)=(B,A;C,D)=(D,C;A,B)=(C,D;B,A)\frac{1}{k}$
+	 \item $(A,C;B,D)=(C,A;D,B)=(B,D;A,C)=(D,B;C,A)=1-k$
+	 \item $(A,C;D,B)=(C,A;B,D)=(D,B;A,C)=(B,D;A,C)\frac{1}{1-k}$
+	 \item $(A,D;C,B)=(D,A;B,C)=(C,B;A,D)=(B,C;D,A)=\frac{k}{k-1}$
+	 \item $(A,D;B,C)=(D,A;C,D)=(C,B;D,A)=(B,C;A,D)=\frac{k-1}{k}$
+	\end{itemize}
+
+	
 	\item Siano $A$, $C$, $B$ e $D$ allineati in quest'ordine su una retta. Siano $M$ e $N$ i punti medi dei segmenti
 	$CD$ e $AB$ rispettivamente. 
 	
 	Mostrare che sono equivalenti le seguenti proprietà:
 	\begin{itemize}
 		\item $(A,B;C,D)=-1$;
-		\item $\displaystyle\frac{2}{AB}=\displaystyle\frac{1}{AC}+
-		\displaystyle\frac{1}{AD}$;
 		\item $MA\cdot MB=MC^2$;
 		\item $CA\cdot CB=CD\cdot CN$;
+		\item $\displaystyle\frac{2}{AB}=\displaystyle\frac{1}{AC}+
+		\displaystyle\frac{1}{AD}$;
 		\item $AB^2+CD^2=4MN^2$.
+		\item $\frac{NC}{ND}=\left(\frac{AC}{AD}\right)^2=\left(\frac{AC}{AD}\right)^2$
 	\end{itemize}
+	\item Siano $\gamma_1$ e $\gamma_2$ due circonferenze di centri $O_1$ e $O_2$ rispettivamente. Siano $S_1$ e $S_2$ rispettivamente il centro di similitudine interno ed esterno di $\gamma_1$ e $\gamma_2$.
+	
+	Mostrare che $(O_1,O_2;S_1,S_2)=-1$.	
 	\item Siano $\gamma_1$ e $\gamma_2$ due circonferenze \textit{ortogonali} di centri $O_1$ e $O_2$ rispettivamente. Una generica retta passante per $O_1$ interseca $\gamma_1$ in $A$ e $B$ e interseca $\gamma_2$ in $C$ e $D$.
 	
 	Mostrare che $(A,B;C,D)=-1$.
@@ -430,10 +449,6 @@ Dimostrare che $d \cdot S' = AB'\cdot BC'\cdot CA'$.
 	\end{equation}
 	
 	Cosa succede se $O\in \{A,B,C,D\}$?
-	\item \textbf{[Unicità del quarto armonico]}
-	Assumiamo che $A$, $B$, $C$, $D_1$ e $D_2$ siano conciclici o allineati.
-	
-	Mostrare che se $(A,B;C,D_1)=(A,B;C,D_2)$ allora $D_1 \equiv D_2$.
 	
     \item Sia $ABC$ un triangolo e $M$ un punto sul segmento $BC$. Sia $N$ preso sulla retta di $BC$ dimodoché $\angle MAN=90$.
     
