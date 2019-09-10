@@ -237,7 +237,7 @@ $$
 $$
 \frac{d-c}{b-a}=\frac{\bar d-\bar c}{\bar b-\bar a}.
 $$
-\emph{Perpendicoarità 2.} Come esercizio mostrare che $ab\perp cd$ se e solo se 
+\emph{Perpendicolarità 2.} Come esercizio mostrare che $ab\perp cd$ se e solo se 
 $$
 \frac{d-c}{b-a}=-\frac{\bar d-\bar c}{\bar b-\bar a}.
 $$
@@ -529,7 +529,9 @@ Definizione di quadrilatero armonico con i birapporti. In un quadrilatero armoni
 \begin{itemize}
 
 \vspace{0.3cm}
-\item \textbf{Introduzione} Il setting della geometria proiettiva èil piano euclideo in cui viene aggiunta una retta all'infinito. Si studiano le proprietà che si conservano per proiettività.
+\item \textbf{Introduzione} In geometria euclidea due rette si intersecano oppure sono parallele. Questo crea dei problemi quando in una dimostrazione si prende l'intersezione di rette perché il punto potrebbe non esistere. Si può ovviare a questo problema aggiungendo per ogni retta (per ogni insieme di rette parallele) un punto all'infinito.  Affinché le cose funzionino bene, diciamo che tutti i punti all'infinito sono allineati sulla retta all'infinito.\\
+In questo modo si crea il piano proiettivo, come unione del piano euclideo con la retta all'infinito.
+
 
 \item \textbf{Lunghezze con segno} Su una retta $r$ sono presenti alcuni punti $A,B,C\ldots$. Si scelga un verso sulla retta e si considerino i segmenti su di essa come vettori, con segno positivo se orientati nel verso scelto e negativo altrimenti. Il vantaggio di questo è che vale $\overline{AC}=\overline{AB}+\overline{BC}$ per qualsiasi posizione reciproca di $A,B,C$.
 
@@ -537,7 +539,7 @@ Definizione di quadrilatero armonico con i birapporti. In un quadrilatero armoni
 $$(A,B;C,D)=\frac{\frac{AC}{AD}}{\frac{BC}{BD}}=\frac{AC\cdot BD}{BC\cdot AD}$$
 dove le lunghezze sono prese con segno.
 
-\item $\bigstar$ \textbf{Permutazione del birapporto}Se $(A,B;C,D)=k$, qual è il valore del birapporto se si permuta l'ordine in cui si prendono i punti? Le $4!=24$ possibilità si dividono in $6$ gruppi in ciascuno dei quali il birapporto è lo stesso. Se si scambiano le due coppie oppure si inverte l'ordine in entrambe il birapporto non cambia: $(A,B;C,D)=(C,D;A,B)=(B,A;D,C)$.
+\item $\bigstar$ \textbf{Permutazione del birapporto} Se $(A,B;C,D)=k$, qual è il valore del birapporto se si permuta l'ordine in cui si prendono i punti? Le $4!=24$ possibilità si dividono in $6$ gruppi in ciascuno dei quali il birapporto è lo stesso. Se si scambiano le due coppie oppure si inverte l'ordine in entrambe il birapporto non cambia: $(A,B;C,D)=(C,D;A,B)=(B,A;D,C)$.
 
 Se si scambiano i primi due o gli ultimi due, il birapporto diventa reciproco: $(A,B;D,C)=(B,A;C,D)=1/k$.
 
@@ -552,22 +554,46 @@ Combinando queste trasformazioni, si possono ottenere i valori di $(A,C;D,B)=\fr
 
 \item \textbf{Invarianza del birapporto per proiezione} Siano $A,B,C,D$ su una retta $r$, sia $r'$ un'altra retta e sia $P$ un punto del piano. Proietto i punti su $r'$: $A'=PA\cap r$ e analogamente per gli altri. Allora $(A,B;C,D)=(A',B';C',D')$.\\
 Dimostrazione: applico il teorema dei seni ai triangoli $PAC,PBC,PAD,PBD$ in modo da sostituire $AC$ con $\sin APC$ e cicliche, semplificando i segmenti $AP$, $BP$ e gli altri angoli. Si ottiene $(A,B;C,D)=\frac{\sin APC \cdot \sin BPD}{\sin BPC \cdot APD}$, che è uguale all'altro birapporto perché $PAA'$ sono allineati (e cicliche).\\
-Il birapporto si conserva anche nel caso i punti vengono proiettati su un cerchio.
+Il birapporto si conserva anche nel caso i punti vengono proiettati su un cerchio.\\
+ATTENZIONE: il punto da cui si proiettano deve stare sul cerchio (o in generale sulla conica). 
+
+\textit{Esercizio} teorema della farfalla.
 
 \item \textbf{Lemmetti} 1) $r,s$ si intersecano in $P$, $A,B,C$ su $r$ e $A',B',C'$ su $s$. Allora $AA',BB',CC'$ concorrono se e solo se $(P,A;B,C)=(P',A';B',C')$.\\
 2) Le rette $(l,r,s,t)$ concorrono in $P$ e $(l,r',s',t')$ concorrono in $Q$. Allora $r\cap r'$, $s \cap s'$, $t\cap t'$ sono allineati.
 
 \item \textbf{Teorema di Desargues} Siano $ABC$ e $A'B'C'$ due triangoli. Si chiamino $X=BC\cap B'C'$, $Y=AC\cap A'C'$, $Z=AB\cap A'B'$. Le rette $AA',BB',CC'$ concorrono se e solo se $X,Y,Z$ sono allineati.
 
+\textit{Esempio} $ABC$ triangolo, $M_A,M_B,M_C$ punti medi, $D_{\infty}$ punto all'infinito di $AH$ e $B_{\infty}$ di $BH$. Per Desargues su $A,M_A,D_\infty$ e $B,M_B,E_{\infty}$ G,H,O sono allineati. \\
+\textit{Esempio} Retta tripolare
 
-
-%$AC=AP\frac{\sin \widehat APC}{\sin \widehat ACP}$, $AD = AP\frac{\sin \widehat APD}{\sin \widehat ADP}$
 
 \item \textbf{Quaterna Armonica} Quattro punti su una retta si dicono una quaterna armonica se $(A,B;C,D)=-1$. Per quanto detto sulle permutazioni, una quaterna è armonica se e solo se non è degenere e $(A,B;C,D)=(B,A;C,D)$.
 
 Una quaterna armonica dev'essere "incatenata": fissati $A,B$, uno tra $C$ e $D$ deve stare all'interno del segmento $AB$ e uno all'esterno. Analogamente si avrà che uno tra $A$ e $B$ sta all'interno del segmento $CD$ e uno all'esterno.
 
-\emph{Esercizio} Sia $ABC$ un triangolo, $D,E,F$ sui lati. Sia $G=EF\cap BC$. Allora $AD,BE,CF$ concorrono se e solo se $(B,C;D,G)=-1$. 
+\emph{Esercizio} Sia $ABC$ un triangolo, $D,E,F$ sui lati. Sia $G=EF\cap BC$. Allora $AD,BE,CF$ concorrono se e solo se $(B,C;D,G)=-1$.\\
+\begin{sol}
+1) Ceva + Menelao 2) Proiettare da $A$ e da $BE\cap CF$ per vedere $(B,C;D,G)=(C,B;D,G)$ 
+\end{sol}
+
+\item \textbf{Apollonio} Reminder veloce che fissati $A,B$ nel piano e $k\in \mathbb{R}$, il luogo dei punti $P$ tali che $\frac{|AP|}{|BP|}$ è una circonferenza $\omega$ con centro su $AB$. Chiamati $C,D=\omega \cap AB$, $(A,B;C,D)=-1$ e per ogni $P$ su $\omega$, $PC$ e $PD$ sono bisettrici interna ed esterna di $\triangle ABP$. 
+
+\emph{Esercizio} Dati $A,B,C,D$ su una retta e $P$ punto esterno, due delle seguenti condizioni implicano la terza:\\
+1) $(A,B;C,D)=-1$ \hspace{0.2cm} 2) $\widehat{APB}=90$  \hspace{0.3cm} 3)$PB$ biseca $\widehat{CPD}$.
+
+\item \textbf{Proprietà della quaterna armonica} Sono equivalenti:
+1) $(A,B;C,D)=-1$ \hspace{0.2cm}2) $MA\cdot MB=MC^2$ \hspace{0.2cm} 3) $CA\cdot CB=CD\cdot CN$  \hspace{0.2cm} 4)  $\displaystyle\frac{2}{AB}=\displaystyle\frac{1}{AC}+\displaystyle\frac{1}{AD}$  \hspace{0.2cm} 5)  $AB^2+CD^2=4MN^2$  \hspace{0.2cm} 6)  $\frac{NC}{ND}=\left(\frac{AC}{AD}\right)^2=\left(\frac{AC}{AD}\right)^2$
+
+\item \textbf{Esempi di quaterne armoniche}
+1) Due circonferenze e i loro centri di similitudine (interno ed esterno\\
+2) Vertici di un triangolo e piedi delle bisettrici sul lato\\
+3) Due punti inversi rispetto a un cerchio $P$ e $P'$, e le intersezioni del cerchio con la retta $PP'$.
+
+
+
+
+
 
 \end{itemize}
 
