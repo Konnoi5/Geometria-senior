@@ -1,0 +1,253 @@
+\section{GM - 2, [Geometria proiettiva]}
+
+\begin{short}
+ Punti all'infinito. Lunghezze con segno (velocemente). Birapporto tra 4 punti su una retta. Proiezione del birapporto, quindi birapporto tra 4 rette o 4 punti su circonferenza. Quaterna Armonica, quadrilatero armonico e le loro proprietà e configurazioni. \\
+ Teorema di Desargues. Teorema di Pascal. Teorema di Pappo. \\
+ Polo e Polare. Teorema di La Hire. Lemma della polare. Teorema di Brokard.  Dualità polo-polare. 
+\end{short}
+
+
+
+\vspace{0.3cm}
+\large{\textbf{Versione estesa}}\normalsize
+\begin{itemize}
+
+\vspace{0.3cm}
+\item \textbf{Introduzione} In geometria euclidea due rette si intersecano oppure sono parallele. Questo crea dei problemi quando in una dimostrazione si prende l'intersezione di rette perché il punto potrebbe non esistere. Si può ovviare a questo problema aggiungendo per ogni retta (per ogni insieme di rette parallele) un punto all'infinito.  Affinché le cose funzionino bene, diciamo che tutti i punti all'infinito sono allineati sulla retta all'infinito.\\
+In questo modo si crea il piano proiettivo, come unione del piano euclideo con la retta all'infinito.
+
+
+\item \textbf{Lunghezze con segno} Su una retta $r$ sono presenti alcuni punti $A,B,C\ldots$. Si scelga un verso sulla retta e si considerino i segmenti su di essa come vettori, con segno positivo se orientati nel verso scelto e negativo altrimenti. Il vantaggio di questo è che vale $\overline{AC}=\overline{AB}+\overline{BC}$ per qualsiasi posizione reciproca di $A,B,C$.
+
+\item \textbf{Birapporto} Dati 4 punti $A,B,C,D$ su una retta, si definisce il birapporto è la seguente quantità:
+$$(A,B;C,D)=\frac{\frac{AC}{AD}}{\frac{BC}{BD}}=\frac{AC\cdot BD}{BC\cdot AD}$$
+dove le lunghezze sono prese con segno.
+
+\item $\bigstar$ \textbf{Permutazione del birapporto} Se $(A,B;C,D)=k$, qual è il valore del birapporto se si permuta l'ordine in cui si prendono i punti? Le $4!=24$ possibilità si dividono in $6$ gruppi in ciascuno dei quali il birapporto è lo stesso. Se si scambiano le due coppie oppure si inverte l'ordine in entrambe il birapporto non cambia: $(A,B;C,D)=(C,D;A,B)=(B,A;D,C)$.
+
+Se si scambiano i primi due o gli ultimi due, il birapporto diventa reciproco: $(A,B;D,C)=(B,A;C,D)=1/k$.
+
+Se si scambia il secondo e il terzo $B \leftrightarrow C$, si ottiene $(A,C;B,D)=1-k$.
+
+Se si scambia il primo e il terzo $A \leftrightarrow C$, si ottiene $(C,B;A,D)=\frac{k}{k-1}$.
+
+
+Combinando queste trasformazioni, si possono ottenere i valori di $(A,C;D,B)=\frac{1}{1-k}$ e $(A,D;B,C)=\frac{k-1}{k}$.
+
+\item \textbf{Suriettività e iniettività del birapporto} Un'altra cosa interessante è fissare i punti $A,B,C$ e vedere come varia il birapporto $(A,B;C,D)$ al variare di $D$ sulla retta. Questa è una funzione biettiva dalla retta proeittiva in $\mathbb{R}\cup\infty$, nei casi degeneri in cui $D$ coincide con uno dei punti assume i valori degeneri di $0,1,\infty$; se $D=\infty$, il birapporto vale $AC/BC$. In particolare, se $(A,B;C,D_1)=(A,B;C,D_2)$, allora $D_1=D_2$.
+
+\item \textbf{Invarianza del birapporto per proiezione} Siano $A,B,C,D$ su una retta $r$, sia $r'$ un'altra retta e sia $P$ un punto del piano. Proietto i punti su $r'$: $A'=PA\cap r$ e analogamente per gli altri. Allora $(A,B;C,D)=(A',B';C',D')$.\\
+Dimostrazione: applico il teorema dei seni ai triangoli $PAC,PBC,PAD,PBD$ in modo da sostituire $AC$ con $\sin APC$ e cicliche, semplificando i segmenti $AP$, $BP$ e gli altri angoli. Si ottiene $(A,B;C,D)=\frac{\sin APC \cdot \sin BPD}{\sin BPC \cdot APD}$, che è uguale all'altro birapporto perché $PAA'$ sono allineati (e cicliche).\\
+Il birapporto si conserva anche nel caso i punti vengono proiettati su un cerchio.\\
+ATTENZIONE: il punto da cui si proiettano deve stare sul cerchio (o in generale sulla conica). 
+
+\textit{Esercizio} teorema della farfalla.
+
+\item \textbf{Lemmetti} 1) $r,s$ si intersecano in $P$, $A,B,C$ su $r$ e $A',B',C'$ su $s$. Allora $AA',BB',CC'$ concorrono se e solo se $(P,A;B,C)=(P',A';B',C')$.\\
+2) Le rette $(l,r,s,t)$ concorrono in $P$ e $(l,r',s',t')$ concorrono in $Q$. Allora $r\cap r'$, $s \cap s'$, $t\cap t'$ sono allineati.
+
+\item \textbf{Teorema di Desargues} Siano $ABC$ e $A'B'C'$ due triangoli. Si chiamino $X=BC\cap B'C'$, $Y=AC\cap A'C'$, $Z=AB\cap A'B'$. Le rette $AA',BB',CC'$ concorrono se e solo se $X,Y,Z$ sono allineati.
+
+\textit{Esempio} $ABC$ triangolo, $M_A,M_B,M_C$ punti medi, $D_{\infty}$ punto all'infinito di $AH$ e $B_{\infty}$ di $BH$. Per Desargues su $A,M_A,D_\infty$ e $B,M_B,E_{\infty}$ G,H,O sono allineati. \\
+\textit{Esempio} Retta tripolare
+
+
+\item \textbf{Quaterna Armonica} Quattro punti su una retta si dicono una quaterna armonica se $(A,B;C,D)=-1$. Per quanto detto sulle permutazioni, una quaterna è armonica se e solo se non è degenere e $(A,B;C,D)=(B,A;C,D)$.
+
+Una quaterna armonica dev'essere "incatenata": fissati $A,B$, uno tra $C$ e $D$ deve stare all'interno del segmento $AB$ e uno all'esterno. Analogamente si avrà che uno tra $A$ e $B$ sta all'interno del segmento $CD$ e uno all'esterno.
+
+\emph{Esercizio} Sia $ABC$ un triangolo, $D,E,F$ sui lati. Sia $G=EF\cap BC$. Allora $AD,BE,CF$ concorrono se e solo se $(B,C;D,G)=-1$.\\
+\begin{sol}
+1) Ceva + Menelao 2) Proiettare da $A$ e da $BE\cap CF$ per vedere $(B,C;D,G)=(C,B;D,G)$ 
+\end{sol}
+
+\item \textbf{Apollonio} Reminder veloce che fissati $A,B$ nel piano e $k\in \mathbb{R}$, il luogo dei punti $P$ tali che $\frac{|AP|}{|BP|}$ è una circonferenza $\omega$ con centro su $AB$. Chiamati $C,D=\omega \cap AB$, $(A,B;C,D)=-1$ e per ogni $P$ su $\omega$, $PC$ e $PD$ sono bisettrici interna ed esterna di $\triangle ABP$. 
+
+\emph{Esercizio} Dati $A,B,C,D$ su una retta e $P$ punto esterno, due delle seguenti condizioni implicano la terza:\\
+1) $(A,B;C,D)=-1$ \hspace{0.2cm} 2) $\widehat{APB}=90$  \hspace{0.3cm} 3)$PB$ biseca $\widehat{CPD}$.
+
+\item \textbf{Proprietà della quaterna armonica} Dati quattro punti $A,B,C,D$ su una retta, sono equivalenti:\\
+1) $(A,B;C,D)=-1$ \hspace{0.2cm}2) $MA\cdot MB=MC^2$ \hspace{0.2cm} 3) $CA\cdot CB=CD\cdot CN$  \hspace{0.2cm}\\ 4)  $\displaystyle\frac{2}{AB}=\displaystyle\frac{1}{AC}+\displaystyle\frac{1}{AD}$  \hspace{0.2cm} 5)  $AB^2+CD^2=4MN^2$  \hspace{0.2cm} 6)  $\frac{NC}{ND}=\left(\frac{AC}{AD}\right)^2=\left(\frac{AC}{AD}\right)^2$
+
+\item \textbf{Esempi di quaterne armoniche}\\
+1) Due circonferenze e i loro centri di similitudine (interno ed esterno)\\
+2) Vertici di un triangolo e piedi delle bisettrici sul lato\\
+3) Due punti inversi rispetto a un cerchio $P$ e $P'$, e le intersezioni del cerchio con la retta $PP'$.
+
+\item \textbf{Simmediana}\\
+Sia $ABC$ un triangolo inscritto in $\Gamma$, $P$ l'intersezione delle tangenti a $\Gamma$ in $B$ e $C$, $D=AP\cap \Gamma$ e $Q=AP\cap BC$. Allora $\triangle PDC \sim \triangle PCA$, $(A,D;Q,P)=-1$ e $AB\cdot CD=AC\cdot BD$.
+
+\item \textbf{Quadrilatero armonico}
+Dati quattro punti $A,B,C,D$ su una circonferenza in quest'ordine, le seguenti proprietà sono equivalenti e in tal caso $ABCD$ viene detto quadrilatero armonico:\\
+1) $(A,C;B,D)=-1$ \hspace{0.2cm} 2) $AB\cdot CD= BC\cdot AD$ \hspace{0.2cm} 3) $BD$ è simmediana in $\triangle ABC$ 4) $BD$ e le tangenti a $\Gamma$ in $A$ e $C$ concorrono \hspace{0.2cm}
+5) Detto $M$ punto medio di $AC$, $\angle BMA=\angle AMD$  \hspace{0.2cm} 6) Le bisettrici di $\angle ABC$ e $\angle ADC$ concorrono su $AC$  
+
+\item \textbf{Altre proprietà del quadrilatero armonico}\\
+1) $\frac{AB^2}{AD^2}=\frac{MB}{MD}$\\
+2) I triangoli $BMC$, $BAD$, $CMD$ sono simili.\\
+3) Chiamata $Q$ l'intersezioni delle tangenti in $B$ e $D$, allora $BQDMO$ è ciclico
+
+\item \textbf{Teorema di Pascal}
+Siano $A,B,C,D,E,F$ su un cerchio $\Gamma$. Sia $Z=AE\cap BD$, $Y=AC\cap DF$, $X=BC\cap EF$. Allora i punti $X,Y,Z$ sono allineati.\\
+Vale anche il teorema di Pappo, nel caso i punti stiano su due rette. \\
+Una cosa a cui prestare attenzione è che non vale l'implicazione inversa: se i punti $X,Y,Z$ sono allineati, non è detto che $ABCDEF$ siano conciclici, si può dire al massimo che si trovano su una stessa conica.
+
+\emph{Esercizio} Teorema di Newton, teorema di Brianchon
+
+\item \textbf{Polo e Polare}
+Sia $\Gamma$ una circonferenza e $P$ un punto. La polare di $P$ è la retta passante per $P'$ (l'inverso di $P$) e perpendicolare ad $OP$. \\
+Se $P$ è esterno a $\Gamma$, la $\text{pol}(P)$ è la retta che passa per l'intersezioni delle tangenti da $P$ a $\Gamma$. \\
+La polare di $O$ è la retta all'infinito.
+
+\item\textbf{Teorema di La Hire} $A \in \text{pol}(B) \iff B \in \text{pol}(A)$\\
+Corollari: $A,B,C$ sono allineati se e solo se $\text{pol}(A), \text{pol}(B), \text{pol}(C)$ concorrono.\\
+Il polo di $PQ$ è l'intersezione della polare di $P$ e della polar e di $Q$: $\text{pol}(P)\cap \text{pol}(Q)= \text{pol}(PQ)$\\
+La polare di $r\cap s$ è la retta per il polo di $r$ e il polo di $s$:  $\text{pol}(r\cap s)= \overline{\text{pol}(r)\text{pol}(s)}$\\
+
+\item \textbf{Lemma della polare}
+$A,B$ su $\Gamma$ cerchio, $C,D$ sulla retta $A,B$. Allora $(A,B;C,D)=-1$ se e solo se $C \in \text{pol}(D)$.
+
+\item \textbf{Teorema di Brokard}
+$A,B,C,D$ quattro punti su un cerchio $\Gamma$, considero il quadrilatero completo con $P=AB\cap CD, Q=AD\cap BC, R=AC\cap BD$. Allora $PQ$ è la polare di $R$ e cicliche.
+
+\item $\bigstar$ \textbf{Polare per coniche} 
+Si può definire la polare per una conica $\gamma$ e punto $P$: al variare di una retta $r$ passante per $P$ che interseca $\gamma$ in $A,B$, il luogo dei punti $Q$ tali che $(A,B;P,Q)=-1$ è una retta ed è la polare di $P$
+
+\item $\bigstar$ \textbf{Proiettività} Una proiettività è una trasformazione del piano che conserva il birapporto di qualsiasi quaterna di punti. Può essere vista come proiezione di un piano su un altro [più in generale è un'applicazione lineare nel piano proiettivo]. Manda rette in rette, coniche in coniche, conserva intersezioni e tangenze.\\
+Può essere usata per mandare una retta all'infinito, che può rendere la configurazione più semplice e simmetrica. Visto che un cerchio andranno in un ellisse, può essere utile applicare successivamente un'affinità per rimandarlo nel cerchio.
+
+\end{itemize}
+
+
+
+\subsection{GM - 2, Esercizi}
+\begin{enumerate}
+
+	\item \textbf{[Unicità del quarto armonico]}
+	Assumiamo che $A$, $B$, $C$, $D_1$ e $D_2$ siano conciclici o allineati.
+	
+	Mostrare che se $(A,B;C,D_1)=(A,B;C,D_2)$ allora $D_1 \equiv D_2$.
+	
+	\item \textbf{Permutazioni in un birapporto} Siano $A,B,C,D$ quattro punti tali che $(A,B;C,D)=k$. Dimostrare che:
+	\begin{itemize}
+	 \item $(A,B;C,D)=(B,A;D,C)=(C,D;A,B)=(D,C;B,A)=k$
+	 \item $(A,B;D,C)=(B,A;C,D)=(D,C;A,B)=(C,D;B,A)\frac{1}{k}$
+	 \item $(A,C;B,D)=(C,A;D,B)=(B,D;A,C)=(D,B;C,A)=1-k$
+	 \item $(A,C;D,B)=(C,A;B,D)=(D,B;A,C)=(B,D;A,C)\frac{1}{1-k}$
+	 \item $(A,D;C,B)=(D,A;B,C)=(C,B;A,D)=(B,C;D,A)=\frac{k}{k-1}$
+	 \item $(A,D;B,C)=(D,A;C,D)=(C,B;D,A)=(B,C;A,D)=\frac{k-1}{k}$
+	\end{itemize}
+
+	
+	\item Siano $A$, $C$, $B$ e $D$ allineati in quest'ordine su una retta. Siano $M$ e $N$ i punti medi dei segmenti
+	$CD$ e $AB$ rispettivamente. 
+	
+	Mostrare che sono equivalenti le seguenti proprietà:
+	\begin{itemize}
+		\item $(A,B;C,D)=-1$;
+		\item $MA\cdot MB=MC^2$;
+		\item $CA\cdot CB=CD\cdot CN$;
+		\item $\displaystyle\frac{2}{AB}=\displaystyle\frac{1}{AC}+
+		\displaystyle\frac{1}{AD}$;
+		\item $AB^2+CD^2=4MN^2$.
+		\item $\frac{NC}{ND}=\left(\frac{AC}{AD}\right)^2=\left(\frac{AC}{AD}\right)^2$
+	\end{itemize}
+	\item Siano $\gamma_1$ e $\gamma_2$ due circonferenze di centri $O_1$ e $O_2$ rispettivamente. Siano $S_1$ e $S_2$ rispettivamente il centro di similitudine interno ed esterno di $\gamma_1$ e $\gamma_2$.
+	
+	Mostrare che $(O_1,O_2;S_1,S_2)=-1$.	
+	\item Siano $\gamma_1$ e $\gamma_2$ due circonferenze \textit{ortogonali} di centri $O_1$ e $O_2$ rispettivamente. Una generica retta passante per $O_1$ interseca $\gamma_1$ in $A$ e $B$ e interseca $\gamma_2$ in $C$ e $D$.
+	
+	Mostrare che $(A,B;C,D)=-1$.
+	\item \textbf{[Conservazione del birapporto per inversione]} Assumiamo che $A$, $B$, $C$ e $D$ siano allineati o conciclici. Siano $A'$, $B'$, $C'$ e $D'$ (allineati o conciclici) le immagini dei precedenti punti tramite un'inversione circolare di centro $O\notin\left\{A,B,C,D\right\}$  qualsiasi. Allora
+	\begin{equation}
+	(A,B;C,D)=(A',B';C',D').
+	\end{equation}
+	
+	Cosa succede se $O\in \{A,B,C,D\}$?
+	
+    \item Sia $ABC$ un triangolo e $M$ un punto sul segmento $BC$. Sia $N$ preso sulla retta di $BC$ dimodoché $\angle MAN=90$.
+    
+    Mostrare che $(B,C;M,N)=-1$ se e solo se $AM$ è bisettrice dell'angolo $\angle{BAC}$.
+    \item Sia $ABC$ un triangolo scaleno e sia $D \in AC$ tale che $BD$ è la bisettrice di $\angle ABC$.
+    Siano $E$ ed $F$ i piedi delle perpendicolari tracciate rispettivamente da $A$ e da $C$ sulla retta $BD$ e
+    sia $M \in BC$ tale che $DM \perp BC$.
+    
+    Mostrare che $\angle EMD=\angle DMF$.
+    \item \textbf{[Teorema della farfalla]} Sia $MN$ una corda di una circonferenza $\gamma$ e sia $P$ il suo punto medio. Siano $AB$ e $CD$ due corde qualsiasi di $\gamma$ che si intersecano in $P$ dimodoché $A$ e $C$ siano nello stesso semipiano generato dalla retta su cui giace $MN$. 
+    
+    Mostrare che $AD$ e $BC$ intersecano la corda $MN$ in due punti equidistanti da $P$. 
+    \item Sia $ABCD$ un quadrilatero circoscritto a una circonferenza e siano $M$, $N$, $P$ e $Q$ i punti di tangenza di $AB$, $BC$, $CD$ e $DA$ con la circonferenza rispettivamente. 
+    
+    Mostrare che $AC$, $BD$, $MP$ e $NQ$ sono concorrenti.
+    \item \emph{[Copiato in GB]} \textbf{[Lemma della \textit{simmediana}]} Sia $ABC$ un triangolo inscritto in una circonferenza $\gamma$. Le tangenti a $\gamma$ in $B$ e $C$ si intersecano in $P$.
+    
+    Mostrare che $AP$ è \textit{simmediana} relativa a $BC$, \textit{i.e.} simmetrica della mediana relativa a $BC$ rispetto alla bisettrice dell'angolo $\angle BAC$.
+    
+    \item Sia $ABCD$ un quadrilatero ciclico. Le rette $AB$ e $CD$ si intersecano in un punto $E$ e le diagonali $AC$ e $BD$ si intersecano in un punto $F$. Sia $H$ l'intersezione delle circonferenze circoscritte ai triangoli $AFD$ e $BFC$. 
+    
+    Mostrare che $\angle EHF=90^{\circ}$.
+    
+    \item Sia $ABCD$ un quadrilatero armonico inscritto in una circonferenza $\gamma$ di centro $O$ con diagonali $AB$ e $CD$. Sia $M$ il punto medio di $AB$.
+    
+    Mostrare $MA$ è la bisettrice dell'angolo $\angle CMD$.
+    \item Usando gli argomenti della lezione \textbf{G2 - Medium} mostrare il \textbf{Teorema di Brocard} contenuto nella raccolta degli esercizi relativi alla lezione \textbf{G1 - Medium}. 
+    
+    \item Sia $\omega$ la circonferenza inscritta in un triangolo $ABC$ e sia $I$ il suo centro. $\omega$ interseca $BC$, $CA$ e $AB$ rispettivamente in $D$, $E$ e $F$. $BI$ interseca $EF$ in $K$.
+    
+    Mostrare che $BK\perp CK$. 
+    \item Sia $ABC$ un triangolo la cui circonferenza inscritta, di centro $I$, tange $BC$,$CA$ e $AB$ in $D$,$E$ e $F$  rispettivamente. Siano $N$ l'intersezione di $ID$ con $EF$ e $M$ il punto medio di $BC$.
+    
+    Mostrare che $A$, $N$ e $M$ sono allineati.
+\end{enumerate}
+
+
+
+\subsection{GM - 2, Problemi}
+\begin{enumerate}
+	\item \textbf{[China NMO 2017 - 2]} Siano $\omega$ e $\Omega$ di centro $I$ e $O$ rispettivamente la circonferenza inscritta e circoscritta a un triangolo acutangolo
+	$ABC$. La circonferenza $\omega$ interseca $BC$ in $D$ e le tangenti a $\Omega$ passanti per $B$ e $C$ si intersecano in $L$.
+	Siano $AH$ l'altezza condotta da $A$ a $BC$ e $X$ l'intersezione di $AO$ con $BC$. Siano $P$ e $Q$ le 
+	intersezioni di $OI$ con $\Omega$.
+	
+	Mostrare che $PQXH$ è ciclico se e solo se $A,D$ e $L$ sono allineati.
+	\item \textbf{[IMO 2014 - 4]} Siano $P$ e $Q$ punti su un segmento $BC$ di un triangolo acutangolo $ABC$ tali che $\angle PAB = \angle BCA$ e $\angle CAQ=\angle ABC$. Siano $M$ e $N$ punti su $AP$ e $AQ$ rispettivamente tali che $P$ è punto medio di $AM$ e $Q$ è punto medio di $AN$.
+	
+	Mostrare che l'intersezione di $BM$ e $CN$ giace sulla circonferenza circoscritta di $ABC$.
+	
+	\item \textbf{[Iran TST 2007 - Day 2 - 3]}
+	Sia $\omega$ la circonferenza inscritta ad un triangolo $ABC$ che tange $AB$ e $AC$ rispettivamente in $F$ e $E$. Siano $P$ e $Q$ su $AB$ e $AC$ rispettivamente in modo che $PQ$ sia parallelo a $BC$ e tangente ad $\omega$. Siano $T$ l'intersezione di $EF$ con $BC$ e $M$ il punto medio di $PQ$. 
+	
+	Mostrare che $TM$ tange $\omega$.
+	
+	\begin{sol}Se $X=AD\cap \omega$, $TX$ tange $\omega$ per quadrilateri armonici. Poi (XDAY)=-1 e proiettando da $T$ su $PQ$ ottengo che l'intersezione di $TX$
+	 con $PQ$ è il suo punto medio
+	\end{sol}
+	
+	\item \textbf{[Iran TST 2009 - Day 2 - 3]}
+	In un triangolo $ABC$ è inscritta una circonferenza $\omega$ di centro $I$ che interseca i lati $BC$, $CA$ e $AB$ rispettivamente in $D$, $E$ e $F$. Sia $M$ il piede della perpendicolare da $D$ a $EF$. Sia $P$ il punto medio di $DM$ e $H$ l'ortocentro del triangolo $BIC$.
+	
+	Mostrare che $PH$ biseca $EF$. 
+	\item \textbf{[Romania TST 2007 - Day 7 - 2]}	La circonferenza inscritta al triangolo $ABC$ è tangente 
+	ad $AB$ e $AC$ in $F$ ed $E$ rispettivamente. Sia $M$ il punto di $BC$ e $N$ l'intersezione di $AM$ con $EF$. La circonferenza di diametro $BC$ interseca $BI$ e $CI$ in $X$ e $Y$ rispettivamente.
+	
+	Mostrare che $\displaystyle\frac{NX}{NY}=\displaystyle\frac{AC}{AB}$.
+	
+	\begin{sol}Usa l'esercizio 13 e nota che DXY è simile ad ABC e ID è bisettrice di YDX. Oppure semplicemente formula seni-lati su IXY e un po' di trigonometria
+	\end{sol}
+	
+	\item \textbf{[IMO SL 2007 - G8]}
+	Sul lato $AB$ di un quadrilatero convesso $ABCD$ è preso un punto $P$. Sia $\omega$ la circonferenza inscritta al triangolo $CPD$ e sia $I$ il suo centro. Supponiamo che $\omega$ sia tangente alle circonferenze inscritte ai triangoli $APD$ e $BPC$ in $K$ e $L$ rispettivamente. Siano $E$ l'intersezione delle rette $AC$ e $BD$ e $F$ l'intersezione delle rette $AK$ e $BL$.
+	
+	Mostrare che $E$, $I$ e $F$ sono allineati.
+	
+	\item \textbf{APMO 2012 - 4} Sia $ ABC $ un triangolo acutangolo e sia $ D $ su $BC$ il piede dell'altezza da $ A $. Indichiamo poi con $M$ il punto medio di $BC$ e con $H$ l'ortocentro. Sia $E$ il punto di intersezione della circonferenza circoscritta $\Gamma$ con la semiretta per $H$ uscente da $M$ e sia $F$ il punto di intersezione (diverso da $E$) di $ED$ con $\Gamma$.\\
+	Dimostrare che $BF/CF=AB/AC$.
+	
+	\item \textbf{Romania TST 2010, Round 3 - 2} $ABC$ è un triangolo, $\Gamma$ è la sua circonferenza circoscritta e $I$ l'incentro. La bisettrice di $\widehat{ABC}$ interseca $AC$ in $B_0$ e $\Gamma$ in $B_1$, la bisettrice di $\widehat{ACB}$ interseca $AB$ in $C_0$ e $\Gamma$ in $C_1$. \\
+	Dimostrare che $B_0C_0,B_1C_1$ e la retta parallela a $BC$ passante per $I$ concorrono.
+	
+	\item \textbf{IMO 2019 - 2}
+	\item \textbf{Romania TST 2018} \emph{Non c'è su AoPS, viene da Senior 2016 GM2, Sam}
+	\item \textbf{WC 2010 - 6} 
+
+\end{enumerate}

@@ -1,0 +1,190 @@
+\section{GB - 2 [Trasformazioni]}
+\subsection{Programmi}
+
+\begin{short}
+Isometrie: Traslazione, Simmetria, Rotazione. Similitudine. Scrittura di queste trasformazioni in complessi. [$\bigstar$ Affinità]. Applicazioni dell'omotetia. 
+Inversione Circolare. Inversione + Simmetria in un triangolo.
+\end{short}
+
+\vspace{0.3cm}
+\large{\textbf{Versione estesa - Senior 2019}}\normalsize
+\begin{itemize}
+
+\item \textbf{Isometrie. }Le isometrie sono trasformazioni che conservano la distanza. Le figure mantengono la stessa forma: le rette vanno in rette, circonferenze in circonferenze, poligoni in poligoni, gli angoli mantengono la misura. 
+
+Le isometrie più importanti sono traslazione, riflessione e rotazione. 
+
+La traslazione si definisce con un vettore $\vec{v}$, che manda ogni punto $P$ in $P+\vec{v}$ (in cartesiane e in complessi).
+
+La rotazione si definisce tramite un centro $C$ e un angolo $\alpha$ tra 0 e 360.  In complessi, se il centro è l'origine, il punto z viene mandato in $z\cdot e^{i\alpha}$; se il centro è un altro punto, allora bisogna fare una traslazione, rotazione e traslare indietro: $z\rightarrow (z-c)\cdot e^{i\alpha}+c$.
+
+La riflessione si definisce tramite una retta $r$, ogni punto viene mandato nel suo simmetrico rispetto a questa retta. La riflessione inverte l'orientazione a differenza della traslazione e della rotazione.
+
+Come per la rotazione, per scrivere in complessi la riflessione si compongono tre trasformazioni: si sceglie un punto $c$ sulla retta e sia $\alpha$ l'angolo che forma con l'asse reale, allora $z$ va in $\overline{(z-c)e^{-i\alpha}}\cdot e^{i\alpha}+c=\overline{(z-c)}\cdot e^{2i\alpha}+c$.
+
+\textit{Esempio easy:}  $ABC$ triangolo, $H$ ortocentro, $AH$ interseca $BC$ in $D$ e la circonferenza circoscritta in $N$. Dimostrare $DH=HN$.
+
+\vspace{0.3cm}
+\item $\bigstar$ Fatti sparsi su isometrie 
+
+1) ogni isometria è composizione di al massimo tre riflessioni.
+
+2)Si possono dividere in due gruppi, a seconda se mantengono l'orientamento oppure no. Quelle che mantengono l'orientamento sono traslazione e rotazione, quelle che lo invertono sono riflessione e glissoriflessione(=traslazione lungo una retta e riflessione lungo quella retta), questa sono tutte le isometrie possibili
+
+3) rotazione di $\alpha$+rotazione di $\beta$ = rotazione di $\alpha+\beta$ se $\alpha+\beta \neq 0$, altrimenti è traslazione. Traslazione+rotazione di $\alpha$=rotazione di $\alpha$ con un altro centro. analogamente per rotazione+traslazione]
+
+\item \textbf{Omotetia} Il concetto e le proprietà dell'omotetia dovrebbero essere già noti dalle pillole, qui è utile fare tanti esempi ed esercizi.
+
+
+\item $\bigstar$ \textbf{Affinità}
+
+
+\vspace{0.4cm}
+
+\item \textbf{Inversione.} A ogni punto $P$ associa $P'$ tale che $OP\cdot OP'=R^2$. Costruzione con le tangenti (per punto esterno) e al contrario per punto interno. È involutiva, scambia interno ed esterno, i punti sulla circonferenza di inversione rimangono gli stessi. 
+
+Le rette per l'origine rimangono rette per l'origine, circonferenze per l'origine diventano rette non per l'origine [questo si può dimostrare], circonferenze non per l'origine diventano circonferenze non per l'origine. Calcolo di $A'B'=\frac{AB\cdot R^2}{OA \cdot OB}$, dire che $OAB$ e $OB'A'$ sono simili. L'inversione conserva gli angoli tra le curve, ma non gli angoli tra punti.
+
+\textit{Esempio} Teorema di Tolomeo.
+
+In complessi, l'inversione nell'origine di raggio $R$ manda $z$ in $R^2\cdot \overline{z}^{-1}$. 
+
+
+\item $\bigstar$ \textbf{Invarianza di circonferenze per inversione, circonferenze ortogonali} Si può fare un ponte tra potenze e inversione: una circonferenza $\gamma$ è invariata per inversione in $O$ di raggio $R$ se $pow_{\gamma}(O)=R^2$, cioé se le due circonferenze sono ortogonali. Per esempio $\gamma$ circoscritta ad $ABC$, $P$ è l'intersezione della tangente in $A$ con $BC$, allora l'inversione in $P$ di raggio $PA$ scambia $B$ e $C$ e di conseguenza lascia invariata $\gamma$ ]
+
+\item \textbf{Inversione + Simmetria}
+Dato un triangolo $ABC$, si può fare un'inversione di centro $A$ e raggio $\sqrt{AB\cdot AC}$ unita alla simmetria rispetto alla bisettrice di $\widehat{BAC}$. Proprietà della trasformazione: scambia $B$ e $C$, la retta $BC$ con la circoscritta a $ABC$.\\
+
+\item Se c'è una retta $MN$ parallela a $BC$, si può fare un'inversione di raggio $\sqrt{AB\cdot AN}=\sqrt{AM\cdot AC}$ che scambia $B$ con $N$ e $C$ con $M$.
+
+\end{itemize}
+
+\subsection{Esercizi}
+\begin{enumerate}
+       \item Fare i conti per traslazioni, rotazioni, riflessioni, inversione in complessi. 
+       
+       \suspend{enumerate}
+       \textbf{Simmetrie}
+       \resume{enumerate}
+
+       \item \textbf{Problema di Fagnano} Sia $ABC$ un triangolo acutangolo, $P,Q,R$ tre punti variabili sui lati $BC,AC,AB$ rispettivamente. Per quale posizione dei tre punti il perimetro del triangolo $PQR$ è minimo?
+       
+      \begin{sol}Sia $P_1$ il simmetrico di $P$ rispetto $AB$ e $P_2$ rispetto $AC$. Allora il perimetro $PR+RQ+QP=P_1R+RQ+QP_2$ è la lunghezza della spezzata $P_1RQP_2$, fissato P è minimo se i quattro punti sono allineati. Inoltre $\widehat{P_1AP_2}=2\cdot\widehat{BAC}$ e $AP_1=AP_2=AP$, quindi $P_1P_2=AP \sin{\widehat{BAC}}$ è minimo quando è minimo $AP$. Quindi $P$ è piede dell'altezza da $A$, e in tale caso anche $Q$ e $R$ lo sono
+       \end{sol}
+      
+       \suspend{enumerate}
+       \textbf{Rotazioni}
+       \resume{enumerate}
+      
+  \item Teoremi di Napoleone e Vecten (enunciato in G1), la parte che si fa con le rotazioni è dimostrare che il triangolo dei centri è equilatero.
+
+      
+      \item \textbf{Eserciziario Senior 17, G2 - 10} Siano $ABMN$ e $BCQP$ i quadrati costruiti sui lati $AB$ e $BC$ di un triangolo, esternamente al triangolo stesso.
+      Dimostrare che i centri di tali quadrati ed i punti medi di $AC$ e $MP$ sono i vertici di un quadrato.
+      
+      \begin{sol}sia $L$ il centro di $ABMN$ e $R$ di $BCQP$, $J$ il punto medio di $AC$. $LJ$ è parallelo a $MC$ per omotetia di centro $B$ e fattore 2, inoltre dopo una rotazione di $90^{\circ}$ va in $BP$ che è parallelo a $JR$. Da questo si deduce che $LJ=JR$ e sono ortogonali. Analogamente si fa per il punto medio di $MP$
+      \end{sol}
+      
+       \suspend{enumerate}
+       \textbf{Omotetia}
+       \resume{enumerate}
+       
+       	\item Sia $ABC$ un triangolo, $\omega$ la circonferenza inscritta tangente a $BC$ in $D$. Sia $M$ il punto medio di $BC$ e $E$ il simmetrico di $D$ rispetto a $M$. Sia $T$ il diametralmente opposto a $D$ in $\omega$. \\
+       	Dimostrare che $A,T,E$ sono allineati.
+       	
+       	\item Siano $\Gamma$ e $\omega$ due circonferenza tangenti internamente in $P$, con $\omega$ all'interno di $\Gamma$. Sia $AB$ una corda di $\Gamma$ tangente a $\omega$ in un punto $T$.\\
+       	Dimostrare che $PT$ è la bisettrice di $APB$.
+       	
+       	
+       
+       \suspend{enumerate}
+       \textbf{Omotetia+Simmetria}
+       \resume{enumerate}
+       
+       \item  \textbf{[Lemma della \textit{simmediana}]} Sia $ABC$ un triangolo inscritto in una circonferenza $\gamma$. Le tangenti a $\gamma$ in $B$ e $C$ si intersecano in $P$.
+    
+       Mostrare che $AP$ è \textit{simmediana} relativa a $BC$, \textit{i.e.} simmetrica della mediana relativa a $BC$ rispetto alla bisettrice dell'angolo $\angle BAC$.   
+       
+       \begin{sol}
+       Sia $\omega$ la circonferenza di centro $P$ e raggio $PB$. $\Omega\cap AB=D$, $\Omega\cap AC=E$. Per angle chasing $DPE$ allineati è $DE$ è antiparallelo a $BC$, quindi simmetria+omotetia manda $ABC$ in $AED$ e $AM$ in $AP$ in quanto mediane, da cui $AP$ simmediana.
+       \end{sol}
+
+       
+       \suspend{enumerate}
+       \textbf{Inversione}
+       \resume{enumerate}
+       \item Data l'inversione di centro $O$ e raggio $R$, due punti $A$ e $B$ vanno in $A'$ e $B'$. Determinare la lunghezza di $A'B'$ conoscendo le lunghezze di $OA,OB,AB$.
+
+       
+       \item \textbf{Teorema di Tolomeo} Sia $ABCD$ un quadrilatero, $AC\cdot BD\leq AD\cdot BC + AB\cdot CD$ e l'uguale vale sse $ABCD$ è ciclico.
+       
+       
+       	 \item \textbf{[Teorema di Feuerbach]} Mostrare che la circonferenza di Feuerbach è tangente alla circonferenza inscritta e alle circonferenze exinscritte.
+    
+    \begin{sol} Sia $M$ il punto medio di $BC$ e $D$ e $G$ rispettivamente i punti in cui la circonferenza inscritta e quella ex-inscritta opposta ad $A$ incontrano $BC$. Invertire in $M$ con raggio $MD$.
+
+    Per prima cosa si nota che il piede della perpendicolare e il piede della bisettrice su BC si scambiano perché $MH\cdot MI=MD^2$. Inoltre si mostra passando per la circoscritta che la retta immagine della circonferenza dei nove punti fa un angolo di beta - gamma con BC. Dunque la cfr dei nove punti va nella simmetrica della retta BC rispetto alla bisettrice che tange entrambe le circonferenze inscritta ed exinscritta. Inoltre queste due si scambiano
+    \end{sol}
+       
+       \suspend{enumerate}
+       \textbf{Inversione+Simmetria}
+       \resume{enumerate}       
+      
+    
+	 \item  \textbf{[Lemma della \textit{simmediana}]} Sia $ABC$ un triangolo inscritto in una circonferenza $\gamma$. Le tangenti a $\gamma$ in $B$ e $C$ si intersecano in $P$.
+    
+     Mostrare che $AP$ è \textit{simmediana} relativa a $BC$, \textit{i.e.} simmetrica della mediana relativa a $BC$ rispetto alla bisettrice dell'angolo $\angle BAC$.    
+    
+
+	
+
+ \end{enumerate}
+
+ 
+ \subsection{Problemi}
+ \begin{enumerate}
+    \item \textbf{IMOSL2013 - G2}  Sia $ABC$ un triangolo, e sia $\omega$ la sua circonferenza circoscritta.  Siano $M$ il punto medio di $AB$, $N$ il punto medio di $AC$, $T$ il punto medio dell’arco $BC$ di $\omega$ che noncontiene $A$. La circonferenza circoscritta al triangolo $AMT$ interseca l’asse di $AC$ in un punto $X$ interno al triangolo $ABC$. La circonferenza circoscritta al triangolo $ANT$ interseca l’asse di $AB$ in un punto $Y$ interno al triangolo $ABC$. Le rette $MN$ e $XY$ si intersecano in $K$.\\
+    Dimostrare che $KA=KT$.
+    
+    \begin{sol}La simmetria rispetto all'asse di $AT$ manda $M$ in $X$ e $N$ in $Y$, quindi $K$ rimane fisso e sta sull'asse.
+    \end{sol}
+    
+    \item \textbf{EGMO 2016 - 4} Due circonferenze aventi lo stesso raggio, $\omega_1$ e $\omega_2$ , si intersecano in due punti distinti $X_1$ and $X_2$ . Si consideri una circonferenza $\omega$ tangente esternamente a $\omega_1$ nel punto $T_1$ e internamente a $\omega_2$ nel punto $T_2$.\\ Si dimostri che il punto d’intersezione fra le rette $X_1T_1$ e $X_2T_2$ giace su $\omega$.
+    \begin{sol}
+    Inversione in $X_1$
+    \end{sol}
+    
+    \item \textbf{Allenamenti EGMO 2019 - G6}
+    Dato il triangolo $\Delta ABC$ consideriamo $\omega_B$ la circonferenza passante per A, B e tangente in A al lato AC e, simmetricamente, $\omega_C$ la circonferenza passante per A, C e tangente in A al lato AB. Sia D il punto di intersezione di $\omega_B$ e $\omega_C$ , e sia E il punto sulla retta AD tale che $AD = DE$.\\
+    Dimostrare che E sta sulla circonferenza circoscritta al triangolo $\triangle ABC$.
+
+    \begin{sol}
+    invertire in A.
+    \end{sol}
+
+    \item \textbf{Senior 2013 TF}
+    Sia $ABC$ un triangolo. Sia D l’ulteriore intersezione tra la circonferenza passante per C e tangente alla retta AB in A e la circonferenza passante per B e tangente alla retta AC in A.
+    Sia E il punto sulla retta AB (diverso da A) tale che $BA = BE$. Sia F l’ulteriore intersezione tra la retta AC e la circonferenza circoscritta al triangolo $ADE$.\\
+    Dimostrare che $AC = AF$.
+
+    \begin{sol}
+    Invertire in A.
+    \end{sol}
+
+    
+    
+	\item \textbf{IMOSL2011 - G4} Sia $ABC$ un triangolo acutangolo e $\Gamma$ la sua circonferenza circoscritta. Sia $B_0$ il punto medio di $AC$ e $C_0$ il punto medio di $AB$. Sia $D$ il piede dell'altezza da $A$ su $BC$ e sia $G$ il baricentro di $ABC$. Sia $\omega$ la circonferenza passante per $B_0,C_0$ e tangente a $\Gamma$ in un punto $X\neq A$. 
+	
+	Dimostrare che $D,X,G$ sono allineati.
+	
+	\begin{sol}
+	\emph{nota: la soluzione proposta è basic difficile/medium facile}
+	
+	Inversione + simmetria di centro A e raggio $\sqrt(AB*AB_0)$, scambia B e $B_0$, C e $C_0$, manda $D$ nel centro di $\Gamma$ O e $\omega$ in una circonferenza per $B$ e $C$ tangente all'immagine di $\Gamma$, $B_0C_0$, in un punto $Y$. Poiché $BC$ e $B_0C_0$ sono paralleli, $Y$ sta sull'asse di $BC$, quindi $OY$ è perpendicolare a $B_0C_0$. 
+	
+	Sia $T$ l'intersezione delle tangenti a $\Gamma$ per A,X e di $B_0C_0$, è centro radicale di $\Gamma, \omega$ e la circoscritta a $AB_0C_0$. ATXYO è ciclico, l'immagine sotto inversione è la retta XDY. Ora basta mostrare DY intersecato la mediana $AA_0$ è G, ma $AD$ è il doppio di $XA_0$ e sono paralleli, quindi l'intersezione è proprio G.
+	\end{sol}
+	
+
+
+	\end{enumerate}

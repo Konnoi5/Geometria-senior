@@ -1,0 +1,614 @@
+\section{GM - 1 [Numeri complessi e coordinate baricentriche]}
+\subsection{Programmi}
+
+Numeri complessi nella geometria euclidea. Si assume che si possegga una discreta maneggevolezza con il piano complesso.
+Rapido ripasso sulla forma polare dei numeri complessi e significato geometrico delle operazioni.
+
+Condizione di allineamento e scrittura dell'equazione di una retta per due punti. Condizione di parallelismo e scrittura della parallela ad una retta passante per un punto ad essa esterno. Condizione di perpendicolarità e scrittura della perpendicolare ad una retta passante per un punto ad essa esterno. Birapporto fra 4 numeri complessi e condizione di ciclicità.
+
+Equazione di una generica circonferenza. Scelta classica delle coordinate: circonferenza circoscrita $\equiv$ circonferenza unitaria. Punti notevoli nella scelta classica delle coordinate. Esempio di quanto si semplificano i conti: intersezione di due corde generiche. Coordinate $u,v,w$ per l'incentro. 
+
+\vspace{0.5cm}
+Definizione di coordinate baricentriche. 
+
+Come verificare l'allineamento di tre punti ed equazione di una retta generica. Intersezione di due rette. Area di un triangolo di cui si conoscono le coordinate dei vertici. Punto all'infinito di una retta. Quando due rette sono parallele?
+
+Punti notevoli e notazione di Conway: baricentro, incentro, ortocentro, circocentro, excentri, nagel, gergonne, lemoine... Coniugati isogonali e coniugati isotomici.
+
+Equazione della circonferenza circoscritta (come coniugato isogonale della retta all'infinito).
+Equazione di una circonferenza in posizione generale. Equazione dell'asse radicale fra una circonferenza in posizione generale e la circonferenza circoscritta al triangolo referenziale: relazione di tale equazione con le potenze dei vertici del triangolo referenziale rispetto alla circonferenza in posizione generale. Formula di sdoppiamento per la tangente e la polare.
+
+\vspace{0.3cm}
+\large{\textbf{Versione estesa - Senior 2019}}\normalsize
+
+\vspace{0.3cm}
+\textbf{Numeri Complessi}:
+\begin{itemize}
+\item \textbf{Introduzione:} Un numero complesso si scrive come $z=a+bi$, dove $i^2=-1$ e $a,b$ sono numeri reali. Il numero $a$ si dice parte reale e il numero $b$ si dice parte immaginaria. Si può anche scrivere come $z=\rho e^{i\theta}$, dove $\rho>0$ è detto modulo e $0\leq \theta\leq 2\pi$ è detto argomento. Sul piano di Gauss, $\rho$ è la distanza del punto $(a,b)$ dall'origine e $\theta$ è l'angolo formato, in senso antiorario, col semiasse positivo delle $x$.
+
+Identifichiamo un numero complesso con il punto $(a,b)$ del piano di Gauss e alle volte con il vettore che parte dall'origine e arriva ad $(a,b)$.
+
+Per passare dalle coordinate polari a quelle cartesiane: $a=\rho \cos\theta$ e $b=\rho\sin\theta$. Viceversa $\rho=\sqrt{a^2+b^2}$ e $\theta=\arctan{\frac{b}{a}}$. 
+
+\item \textbf{Operazioni:} Per quanto riguarda le operazioni, $z\to z+w$ corrisponde ad una traslazione del vettore $w$; $z\to zw$ - con $w=\rho e^{i\theta}$ corrisponde ad una rotazione in senso antiorario di $\theta$ più una omotetia di centro l'origine e fattore $\rho$; $z\to \bar{z}$ corrisponde ad una simmetria rispetto all'asse reale. 
+
+\item \textbf{Angoli e similitudini:}
+
+\emph{Osservazione}. Sia $g(z)\doteq \frac{z}{\bar z}$. Se $z=\rho e^{i\theta}$, allora $g(z)=e^{2i\theta}$. 
+
+Dati tre numeri complessi (punti) nel piano di Gauss $a$, $b$ e $c$, detto $\theta$ l'angolo $\angle abc$ (ovvero l'angolo di cui ruotare $ab$ in senso antiorario attorno a $b$ perché la retta $ab$ coincida con $bc$ e in più $a$ e $c$ siano dalla stessa parte rispetto a $b$), si ha che esiste un numero reale $\rho>0$ tale che 
+$$
+c-b=(a-b)\rho e^{i\theta},
+$$
+dove $\rho$ non è altro che il rapporto fra le lunghezze dei segmenti $\overline{cb}$ e $\overline{ab}$. 
+
+\textbf{Controlla} \emph{Conseguenza 1: Triangoli simili}. Se i triangoli $abc$ e $def$ sono ordinatamente simili, allora 
+$$
+\frac{c-b}{a-b}=\frac{\overline{cb}}{\overline{ab}}e^{i\angle abc}=\frac{\overline{fe}}{\overline{de}}e^{i\angle def}=\frac{f-e}{d-e},
+$$
+e vale anche il viceversa.
+
+\emph{Conseguenza 2: Equazione dell'angolo}. Dall'osservazione, se $\theta$ è l'angolo $\angle abc$ si ha 
+$$
+e^{2i\theta}=g\left(\frac{c-b}{a-b}\right)=\frac{c-b}{a-b}\cdot \frac{\bar a-\bar b}{\bar c-\bar b}.
+$$
+
+Dunque per mostrare che $\angle abc=\angle def$ basta mostrare 
+$$
+\frac{c-b}{a-b}\cdot \frac{\bar a-\bar b}{\bar c-\bar b}=\frac{f-e}{d-e}\cdot \frac{\bar d-\bar e}{\bar f-\bar e}
+$$
+che è come dire che
+$$
+\frac{c-b}{a-b}\frac{d-e}{f-e} \qquad \mbox{è reale}.
+$$
+\item \textbf{Allineamenti, parallelismi e perpendicolarità:}
+
+\emph{Allineamento.} Se $a$, $b$ e $c$ sono allineati, allora $\angle abc=\pi$ e dunque dall'equazione dell'angolo 
+$$
+\frac{c-b}{a-b}=\frac{\bar c-\bar b}{\bar a-\bar b},
+$$
+e vale anche il viceversa. 
+\emph{Perpendicolarità 1.} Se $ab\perp bc$ allora dall'equazione dell'angolo 
+$$
+\frac{c-b}{a-b}=-\frac{\bar c-\bar b}{\bar a-\bar b}.
+$$
+\emph{Parallelismo.} Come esercizio, mostrare che $ab\parallel cd$ se e solo se 
+$$
+\frac{d-c}{b-a}=\frac{\bar d-\bar c}{\bar b-\bar a}.
+$$
+\emph{Perpendicolarità 2.} Come esercizio mostrare che $ab\perp cd$ se e solo se 
+$$
+\frac{d-c}{b-a}=-\frac{\bar d-\bar c}{\bar b-\bar a}.
+$$
+\item \textbf{Birapporti e ciclicità:}
+
+\emph{Birapporto.} Dati quattro numeri complessi $z_1,z_2,z_3,z_4$ si dice birapporto $[z_1,z_2,z_3,z_4]$ la quantità
+$$
+\frac{z_1-z_2}{z_3-z_2}\cdot \frac{z_3-z_4}{z_1-z_4}.
+$$
+Mediante l'equazione dell'angolo è immediato notare che $[z_1,z_2,z_3,z_4] \in \mathbb R$ se e solo se $z_1z_2z_3z_4$ è ciclico.
+
+\item \textbf{Circonferenza unitaria e scelta delle coordinate:}
+ 
+\emph{Circonferenza unitaria e coordinate classiche.} Nel piano cartesiano la circonferenza unitaria ha equazione $z\bar z=1$. Molto spesso nella risoluzione dei problemi è utile settare la circonferenza circoscritta come circonferenza unitaria, dunque tutti i punti su essa soddisfano $z\bar z=1$ e $o$, il circocentro, diviene l'origine degli assi. Siccome vale $h+2o=3g$ in generale, visti i rapporti sulla retta di Eulero, e, sempre in generale, $g=\frac{a+b+c}{3}$, si ottiene che in questa scelta di coordinate $h=a+b+c$.
+
+\emph{Coordinate dell'incentro} L'incentro è più difficile da gestire. In un problema con l'incentro conviene usare la notazione $u,v,w$. Infatti (dare come esercizio), dato un triangolo $abc$, esistono sempre tre numeri complessi $u,v,w$ tali che $a=u^2$, $b=v^2$, $c=w^2$ e l'incentro $i=-(uv+vw+uw)$. \emph{Hint:} Mostrare che esistono $u$, $v$ e $w$ tali che $a=u^2$, $b=v^2$, $c=w^2$ e i punti $-uv$, $-vw$, $-uw$ sono i punti medi degli archi $ab$, $bc$ e $ca$ che non contengono i terzi punti. 
+
+\emph{Dagli esercizi:}
+
+\item \textbf{[Seconda intersezione di due circonferenze in complessi]} Siano dati 4 punti $a, b, c, d$ nel piano complesso che non formano un parallelogrammo.
+
+Mostrare che esiste una e una sola rotomotetia che
+manda $a$ in $b$ e $c$ in $d$. Detto $x$ il centro di tale rotomotetia e $\alpha$ il numero complesso che rappresenta la rotomotetia, si ha
+$$
+x=\frac{ad-bc}{a-b-c+d}
+$$
+$$
+\alpha=\frac{b-d}{a-c}.
+$$
+
+Mostrare che l'intersezione delle circonferenze circoscritte a $ABX$ e $CDX$ dove $AC$ e $BD$ sono segmenti non paralleli le cui rette si intersecano in $X$, è il centro della rotomotetia che manda $A$ in $B$ e $C$ in $D$. 
+
+%\textbf{Soluzione:} Sia $x$ il centro della rotomotetia, $\alpha$ il numero complesso che rappresenta la rotomotetia - ovvero l'argomento di $\alpha$ è l'angolo di rotazione e il modulo di $\alpha$ è la ragione della rotomotetia. Se manda $a$ in $b$, allora 
+%$$
+%b-x = (a-x)\alpha ,
+%$$
+%e poiché manda $c$ in $d$ si ha anche 
+%$$
+%d-x = (c-x)\alpha.
+%$$
+%Dunque per confronto 
+%$$
+%\frac{b-x}{a-x}=\frac{d-x}{c-x}
+%$$
+%da cui 
+%$$
+%(b-x)(c-x)=(d-x)(a-x)\Rightarrow x=\frac{ad-bc}{a-b-c+d}.
+%$$
+
+%Svolgendo i calcoli si ha infine
+
+%$$
+%\alpha=\frac{b-d}{a-c}.
+%$$
+ 
+\emph{Dai problemi:}
+
+\item \textbf{[BMO 2009 - 2]} Sia $MN$ una segmento parallelo al lato $BC$ del triangolo $ABC$, con $M$ sul lato $AB$ e $N$ sul lato $AC$. Le rette $BN$ e $CM$ si incontrano in $P$. Le circonferenze circoscritte a $BMP$ e $CNP$ si incontrano in due punti distinti $P$ e $Q$. 
+ 
+ Mostrare che $\angle BAQ = \angle PAC$.
+ 
+ %\textbf{Soluzione:} Diciamo che $a$ è l'origine del nostro piano di Gauss, mentre $b$ e $c$ sono due generici punti. Visto che $mn\parallel bc$ e $m\in ab$, $m\in ac$ si ha che esiste $\lambda \in \mathbb R$ tale che $m=\lambda b$ e $n=\lambda c$. Essendo $q$ il centro della rotomotetia che manda $m$ in $b$ e $c$ in $n$, allora 
+ %$$
+ %q=\frac{mn-bc}{m+n-b-c}=\frac{\lambda^2bc-bc}{\lambda b+\lambda c-b-c}=\frac{(\lambda+1)bc}{b+c}.
+ %$$
+ 
+ %Per trovare trovare $p$ basterebbe imporre $p\in mc$ e $p\in bn$. \emph{Proporlo come esercizio}. D'altra parte non ce n'è bisogno: infatti noi siamo interessati poi solo all'angolo $\angle CAP$ e dunque non tanto ci servono le coordinate di $P$ quanto capire chi è la retta $AP$, che è la mediana di $ABC$. Dunque possiamo dire che esiste un certo $\eta$ reale tale che 
+% $$
+ %p=\eta(b+c).
+ %$$ 
+ 
+ %Per l'equazione dell'angolo, se $\theta=\angle BAQ$ si ha 
+ %$$
+ %e^{2i\theta}=\frac{q-a}{b-a}\frac{\bar b-\bar a}{\bar q-\bar a}=\frac{c(\bar b+\bar c)}{\bar c(b+c)},
+ %$$
+ %mentre se $\theta'=\angle PAC$ si ha 
+ %$$
+ %e^{2i\theta'}=\frac{c-a}{p-a}\frac{\bar p-\bar a}{\bar c-\bar a}=\frac{c(\bar b+\bar c)}{\bar c(b+c)}.
+ %$$
+ 
+ %Da ciò, con un attimo di discussione, si ottiene che $\theta=\theta'$ che implica la tesi. 
+ 
+ \item \textbf{[RMM 2012 - 2]} Sia $ABC$ un triangolo non isoscele e siano $D$, $E$ e $F$ rispettivamente i punti medi dei lati $BC$, $CA$ e $AB$. La circonferenza $BCF$ e la retta $BE$ si intersecano nuovamente in $P$ e la circonferenza $ABE$ e la retta $AD$ in $Q$. Le rette $DP$ e $FQ$ si incontrano in $R$. 
+ 
+ Mostrare che il baricentro $G$ del triangolo $ABC$ giace sulla circonferenza circoscritta al triangolo $PQR$.
+ 
+ %\textbf{Soluzione:} Per mostrare la ciclità è sufficiente mostrare che, detto $\theta=\angle GPD$ e $\theta'=\angle GQF$, si ha 
+ %$$
+ %\theta=\theta'.
+ %$$  
+ %Dall'equazione dell'angolo risulta che per fare ciò è sufficiente mostrare
+ %$$
+ %\frac{d-p}{g-p}\frac{g-q}{f-q}\in\mathbb R.
+ %$$
+ %Il problema è dunque spostato a trovare i punti $p$ e $q$. Qui usiamo un'osservazione sintetica. Si ha che 
+ %$$
+ %\angle GDE=\angle GAB = \angle QEG,
+ %$$
+ %dove la prima è vera per il parallelismo $AB\parallel ED$ e la seconda è vera poiché $ABEQ$ è ciclico. 
+ %Analogamente si ha $\angle EQD=\angle GED$ e dunque i triangoli $GDE$ e $GEQ$ sono ordinatamente simili.
+ %Dunque, scegliendo $g=0$, risulta, visto che $GD\cdot GQ=GE^2$,
+ %$$
+ %q=d\frac{|e|^2}{|d|^2}=\frac{e\bar e}{\bar d}
+ %$$
+ %e analogamente 
+ %$$
+ %p=\frac{f\bar f}{\bar e}.
+ %$$
+ %A questo punto 
+ %$$
+ %\frac{d-p}{g-p}\frac{g-q}{f-q}=\frac{(d\bar e-f\bar f)e\bar e}{(f\bar d-e\bar e)f\bar f}
+ %$$
+ %e poiché, essendo $g=0$, si ha $d+e+f=0$, la precedente espressione è uguale a 
+ %$$
+ %\frac{|e|^2}{|f|^2}
+ %$$ 
+ %che è un numero reale, come si voleva.
+\end{itemize}
+\textbf{Coordinate baricentriche}:
+\begin{itemize}
+	\item \textbf{Definizioni:}
+	\emph{Terna omogenea}. Con $[x:y:z]$ indico una terna omogenea di numeri non tutti nulli, ovvero $[x:y:z]=[u:v:w]$ se e solo se esiste $k\in\mathbb R\setminus\{0\}$ tale che $u=kx$, $v=ky$ e $w=kz$. 
+	
+	\emph{Coordinate baricentriche}. Dato $ABC$ un triangolo e $P$ un punto sullo stesso piano di $ABC$, allora le coordinate baricentriche di $P$ sono 
+	$$
+	[ |BCP|: |CAP|: |ABP| ],
+	$$
+	dove $|\cdot|$ indica l'area con segno, ovvero è un numero che ha come modulo l'area di $\cdot$ e come segno $+$ o $-$ a seconda che il verso in cui sono scritti i vertici sia lo stesso o l'opposto rispetto a quello in cui sono assegnati $ABC$. 
+	\item \textbf{Alcuni punti:} 
+	\emph{Notazione di Conway}. Da ora in poi scriveremo
+	$$
+	S_A\doteq\frac{b^2+c^2-a^2}{2}, \quad S_B\doteq\frac{a^2+c^2-b^2}{2}, \quad 
+	S_C\doteq\frac{a^2+b^2-c^2}{2}.
+	$$ 
+	
+	Inoltre indichiamo con $a$ la lunghezza di $BC$, con $b$ la lunghezza di $AC$ e con $c$ la lunghezza di $AB$. Siano $\alpha,\beta,\gamma$ rispettivamente gli angoli in $A$, $B$ e $C$.
+	
+	I vertici hanno coordinate 
+	$$
+	A=[1:0:0], \quad B=[0:1:0], \quad C=[0:0:1],
+	$$
+	i punti medi hanno coordinate 
+	$$
+	M_{BC}=[0:1:1], \quad \mbox{e cicliche},
+	$$
+	i piedi delle bisettrici hanno coordinate 
+	$$
+	D_{BC}=[0:b:c], \quad \mbox{e cicliche},
+	$$
+	il baricentro ha coordinate 
+	$$
+	G=[1:1:1],
+	$$
+	e l'incentro ha coordinate 
+	$$
+	I=[a:b:c].
+	$$
+	Per l'ortocentro calcoliamo le aree
+	$$
+	H=\left[\frac{a}{\cos\alpha}:\frac{b}{\cos b}:\frac{c}{\cos\gamma}\right]=[\tan\alpha:\tan\beta:\tan\gamma]=[S_BS_C:S_CS_A:S_AS_B],
+	$$
+	dove nell'ultimo passaggio usiamo la notazione di Conway. Per i piedi delle altezze notiamo che in generale le tracce di un punto sono semplici da trovare e dunque
+	$$
+	H_{BC}=[0:S_C:S_B].
+	$$
+	Troviamo il circocentro 
+	$$
+	O=[\sin2\alpha:\sin2\beta:\sin2\gamma]=[a^2S_A:b^2S_B:c^2S_C].
+	$$
+	dove nell'ultimo passaggio usiamo la notazione di Conway.
+	
+	\emph{Esercizio:} Il coniugato isogonale di $[x:y:z]$ ha coordinate $\left[\frac{a^2}{x}:\frac{b^2}{y}:\frac{c^2}{z}\right]$ e quello isotomico ha coordinate $\left[\frac{1}{x}:\frac{1}{y}:\frac{1}{z}\right]$. 
+	
+	\emph{Esercizio:} Mostrare che le coordinate dell'excentro relativo ad $A$ sono
+	$$
+	I_A=[-a:b:c],
+	$$
+	le coordinate del punto di Lemoine sono 
+	$$
+	L=[a^2:b^2:c^2],
+	$$
+	quelle di Gergonne sono 
+	$$
+	Ge=\left[\frac{1}{p-a}:\frac{1}{p-b}:\frac{1}{p-c}\right],
+	$$
+	e di Nagel 
+	$$
+	Na=\left[p-a:p-b:p-c\right].
+	$$
+	
+	\item \emph{Osservazioni.} Ci sono dei punti che \emph{non stanno sul nostro piano}. Infatti si mostra che $S$, l'area di $ABC$, è uguale a $|BCP|+|CAP|+|ABP|$. Dunque i punti $[x:y:z]$ tali che $x+y+z=0$ sono dei punti \emph{fantasma} sul nostro piano. Diciamo che sono \emph{sulla retta all'infinito}.
+	
+	Notare che per qualsiasi altra scelta di $[x:y:z]$ con $x+y+z\neq 0$ esiste uno e un solo punto sul piano che ha quelle come coordinate.
+	
+	Le coordinate $P=[\alpha:\beta:\gamma]$ tali che $\alpha+\beta+\gamma=1$ sono dette coordinate baricentriche esatte di $P$ e sono tali che
+	$$
+	\vec{P}=\alpha\vec{A}+\beta\vec{B}+\gamma\vec{C}.
+	$$
+	
+	Questo segue molto velocemente dalla definizione delle coordinate che tira in ballo l'area. Dunque per trovare il punto medio fra due punti bisogna usare le coordinate baricentriche esatte - o perlomeno con la stessa somma delle coordinate!
+	
+	\emph{Esercizio:} trova le coordinate del punto di Feuerbach, ovvero il centro della circonferenza di Feuerbach, che è il punto medio fra $O$ e $H$.
+	
+	\item \textbf{Rette}: 
+	\emph{Equazione.} Una generica retta ha equazione $lx+my+nz=0$ per qualche $l,m,n$ reali. \emph{Pensarci per esercizio}.
+	
+	\emph{Punto all'infinito.} Il punto all'infinito di questa retta è $[m-n:n-l:l-m]$. 
+	
+	\emph{Intersezione di due rette.} Due rette $lx+my+nz=0$ e $l'x+m'y+n'z=0$, una non multipla dell'altra, si intersecano sempre nell'unico punto di coordinate omogenee
+	$$
+	\left[n'm-nm':nl'-n'l:lm'-l'm\right].
+	$$
+	
+	\emph{Rette parallele}. Dunque anche due rette parallele si intersecano sempre, visto il punto precedente. In effetti si intersecano nel punto all'infinito di entrambe.
+	
+	\emph{Retta per due punti}. Dati due punti $[a:b:c]$ e $[a':b':c']$, la retta passante per questi due punti ha equazione 
+	$$
+	\begin{bmatrix}
+		a & b & c \\
+		a' & b' & c' \\
+		x & y & z
+	\end{bmatrix}
+	=0
+	$$
+	
+	Da questa segue anche la condizione di allineamento di tre punti, e la scrittura di una retta parallela ad una data, passante per un punto.
+	
+	\emph{Rette perpendicolari}. \emph{Da fare come esercizio}
+	Il punto all'infinito di una retta perpendicolare a $px+qy+rz=0$ è
+	\begin{equation}
+	[S_Bg-S_Ch:S_Ch-S_Af:S_Af-S_Bg]
+	\end{equation}
+	dove $[f:g:h]=[q-r:r-p:p-q]$ è il punto all'infinito della retta.
+	
+	\emph{Dagli esercizi:}
+	\item \textbf{[Coordinate dei vertici del \textit{triangolo tangenziale} in baricentriche]}  Dato un triangolo $ABC$ referenziale in un sistema di coordinate baricentriche, mostrare che la tangente condotta da $A$ alla circonferenza circoscritta ad $ABC$ ha equazione
+	\begin{equation}
+	c^2y+b^2z=0.
+	\end{equation}
+	
+	Ciclando opportunamente, calcolare le coordinate dei vertici del triangolo tangenziale (\textit{i.e.} il triangolo formato dalle intersezione delle tangenti condotte da $A$, $B$ e $C$ alla circonferenza circoscritta ad $ABC$).
+	%\textbf{Soluzione:}
+	%Calcoliamo le coordinate di $P$, intersezione della tangente condotta da $A$ alla circoscritta e $BC$. Risulta che 
+	%$$
+	%P=[0:-b^2:c^2]
+	%$$
+	%da cui si ottiene subito che la tangente, dovendo passare per $A=[1:0:0]$ è
+	%$$
+	%c^2y+b^2z=0.
+	%$$
+	
+	%Ciclando si ottiene che i vertici del triangolo tangenziale sono $[a^2:b^2:-c^2]$ e ciclici.
+	\emph{Dai problemi:}
+	\item \textbf{[MOP 2006]} Sia $ABC$ un triangolo inscritto in una circonferenza $\omega$. $P$ giace su $BC$ in modo tale che $PA$ è tangente a $\omega$. La bisettrice di $\angle APB$ interseca i segmenti $AB$ e $AC$ rispettivamente in $D$ ed $E$ e i segmenti $BE$ e $CD$ si intersecano in $Q$. Supponiamo che la retta $PQ$ passi per il centro di $\omega$. 
+	
+	Calcolare $\angle BAC$.
+	
+	%\textbf{Soluzione:}
+	%Dagli esercizi sappiamo che $P=[0:b^2:-c^2]$. Dal teorema della bisettrice si deduce che $D=[c:b:0]$ e $E=[b:0:c]$, da cui $Q=[bc:b^2:c^2]$. A questo punto usando $O=[a^2S_A:b^2S_B:c^2S_C]$ e imponendo il determinante uguale a 0 si deduce $\angle BAC=60$.
+\end{itemize}
+
+
+\subsection{Esercizi}
+\begin{enumerate}
+	\item \textbf{[Scrittura del coniugato isogonale in complessi]} Dimostrare che in un triangolo $abc$ inscritto in una
+	circonferenza unitaria centrata nell'origine, il coniugato isogonale di $p$ è
+	\begin{equation}
+	q=\frac{-p+a+b+c-\overline{p}(ab+bc+ca)+\overline{p}^2abc}{(1-p\overline{p})}.
+	\end{equation}
+	\item \textbf{[Seconda intersezione di due circonferenze in complessi]} Siano dati 4 punti $a, b, c, d$ nel piano complesso che non formano un parallelogrammo.
+	
+	Mostrare che esiste una e una sola rotomotetia che
+	manda $a$ in $b$ e $c$ in $d$. Detto $x$ il centro di tale rotomotetia e $\alpha$ la ragione, si ha
+	$$
+	c=\frac{ad-bc}{a-b-c+d}
+	$$
+	$$
+	\alpha=\frac{b-d}{a-c}.
+	$$
+	
+	Mostrare che l'intersezione delle circonferenze circoscritte a $ABX$ e $CDX$ dove $AC$ e $BD$ sono segmenti non paralleli le cui rette si intersecano in $X$, è il centro della rotomotetia che manda $A$ in $B$ e $C$ in $D$. 
+	
+	\textbf{Soluzione:} Sia $x$ il centro della rotomotetia, $\alpha$ il numero complesso che rappresenta la rotomotetia - ovvero l'argomento di $\alpha$ è l'angolo di rotazione e il modulo di $\alpha$ è la ragione della rotomotetia. Se manda $a$ in $b$, allora 
+	$$
+	b-x = (a-x)\alpha ,
+	$$
+	e poiché manda $c$ in $d$ si ha anche 
+	$$
+	d-x = (c-x)\alpha.
+	$$
+	Dunque per confronto 
+	$$
+	\frac{b-x}{a-x}=\frac{d-x}{c-x}
+	$$
+	da cui 
+	$$
+	(b-x)(c-x)=(d-x)(a-x)\Rightarrow x=\frac{ad-bc}{a-b-c+d}.
+	$$
+	
+	Svolgendo i calcoli si ha infine
+	
+	$$
+	\alpha=\frac{b-d}{a-c}.
+	$$
+	\item \textbf{[Una caratterizzazione della \textit{polare} come luogo dei \emph{quarti armonici}]} Sia $\gamma$ la circonferenza unitaria centrata nell'origine e sia $P$ un punto qualsiasi. Siano $r$ ed $s$ la polare di $P$ rispetto a $\Gamma$ e una retta passante per $P$ rispettivamente. 
+		\begin{itemize}
+		\item Mostrare che $r$ ha equazione
+			\begin{equation}
+			x\bar{p}-2+\bar{x}p=0
+			\end{equation}
+			dove $p$ è il numero complesso associato a $P$.
+		\item  Supponiamo che $s$ intersechi $\gamma$ in $A_1, A_2$, ed $r$ in $Q$. Mostrare che $(P,Q;A1,A2)=-1$.
+		\end{itemize}
+	\item \textbf{[Scrittura del circocentro di un triangolo generico in complessi]} Mostrare che il circocentro del triangolo $z_1z_2z_3$ è
+		\begin{equation}
+		\frac{z_1\bar{z_1}(z_2-z_3)+z_2\bar{z_2}(z_3-z_1)+z_3\bar{z_3}(z_1-z_2)}{\begin{vmatrix}
+			z_1 & \bar{z_1} & 1 \\
+			z_2 & \bar{z_2} & 1 \\
+			z_3 & \bar{z_3} & 1 
+			\end{vmatrix}}.
+		\end{equation}
+	\item \textbf{[Teorema di Brocard]} Sia $ABCD$ un quadrilatero inscritto in una circonferenza di centro $O$. Le rette $AB$ e $CD$ si intersecano in $E$, le rette $AD$ e $BC$ si intersecano in $F$ e le rette $AC$ e $BD$ si intersecano in $G$. \\
+	Mostrare che $O$ è ortocentro di $EFG$.
+	
+	\item Sia $ABC$ un triangolo di ortocentro $H$. Da $A$ si conducano le due tangenti alla circonferenza di diametro $BC$ che la intersecano in $P$ e $Q$. \\
+	Mostrare che $H\in PQ$.
+	
+	\begin{sol} la circonferenza unitaria è quella di diametro BC.
+	I punti x che stanno su tale circonferenza e per cui $AX \perp OX$ soddisfano una quadratica. Sia $H'$ l'intersezione di $AH$ con $PQ$. Basta mostrare che $CH' \perp AB.$
+	\end{sol}
+	
+	\item \textbf{[Una caratterizzazione del \textit{punto di Lemoine}]} Sia $ABC$ un triangolo e siano $D$, $E$ e $F$ i punti medi di $BC$, $CA$ e $AB$ rispettivamente. Siano $X$, $Y$ e $Z$ i punti medi delle altezze condotte da $A$, $B$ e $C$ rispettivamente. 
+	
+	Mostrare che $DX$, $EY$ e $FZ$ si intersecano in un punto di coordinate baricentriche $[a^2:b^2:c^2]$. Chi è tale punto nel triangolo referenziale?
+	
+	$(\star)$ Mostrare che tale punto (il \textit{punto di Lemoine}) è l'unico punto ad essere baricentro del proprio triangolo pedale.
+	\item \textbf{[Coordinate dei vertici del \textit{triangolo tangenziale} in baricentriche]}  Dato un triangolo $ABC$ referenziale in un sistema di coordinate baricentriche, mostrare che la tangente condotta da $A$ alla circonferenza circoscritta ad $ABC$ ha equazione
+	\begin{equation}
+	c^2y+b^2z=0.
+	\end{equation}
+	
+	Ciclando opportunamente, calcolare le coordinate dei vertici del triangolo tangenziale (\textit{i.e.} il triangolo formato dalle intersezione delle tangenti condotte da $A$, $B$ e $C$ alla circonferenza circoscritta ad $ABC$).
+	
+	\textbf{Soluzione:}
+	Calcoliamo le coordinate di $P$, intersezione della tangente condotta da $A$ alla circoscritta e $BC$. Risulta che 
+	$$
+	P=[0:-b^2:c^2]
+	$$
+	da cui si ottiene subito che la tangente, dovendo passare per $A=[1:0:0]$ è
+	$$
+	c^2y+b^2z=0.
+	$$
+	
+	Ciclando si ottiene che i vertici del triangolo tangenziale sono $[a^2:b^2:-c^2]$ e ciclici.
+	\item Sia dato un triangolo $ABC$ e un punto $P$ di coordinate baricentriche $[u:v:w]$ scegliendo come triangolo referenziale $ABC$.
+		\begin{itemize}
+			\item \textbf{[Proiezione di un punto sui lati in baricentriche]} Mostra che, dette $P_A$, $P_B$ e $P_C$ le proiezioni di $P$ sui lati $BC$, $CA$ e $AB$, si ottiene
+			$$
+			P_A = [0: S_Cu+a^2v:S_Bu+a^2w]
+			$$
+			$$
+			P_B = [S_Cv+b^2u: 0: S_Av+b^2w]
+			$$
+			$$
+			P_C = [S_Bw+c^2u: S_Aw+c^2v: 0]
+			$$			
+			dove $S_A=\displaystyle\frac{b^2+c^2-a^2}{2}$ e cicliche.
+			\item  \textbf{[Punto all'infinito della retta perpendicolare in baricentriche]} Usando il punto precedente mostrare che 
+			il punto all'infinito di una retta perpendicolare a $px+qy+rz=0$ è
+			\begin{equation}
+			[S_Bg-S_Ch:S_Ch-S_Af:S_Af-S_Bg]
+			\end{equation}
+			dove $[f:g:h]=[q-r:r-p:p-q]$ è il punto all'infinito della retta.
+		\end{itemize}
+	\item \textbf{[Intersezione delle ceviane per un punto P con la circoscritta in baricentriche]} Sia $P=[u:v:w]$, dove le coordinate baricentriche 
+	sono riferite ad $ABC$. Dette $P^A$, $P^B$ e $P^C$ rispettivamente le intersezioni di $AP$, $BP$ e $CP$ con la circonferenza circoscritta, mostrare che 
+	$$
+	P^A=\left[\displaystyle\frac{-a^2vw}{c^2v+b^2w}:v:w\right]
+	$$
+	$$
+	P^B=\left[u:\displaystyle\frac{-b^2uw}{a^2w+c^2u}:w\right]
+	$$
+	$$
+	P^C=\left[u:v:\displaystyle\frac{-c^2uv}{a^2v+b^2u}\right].
+	$$
+	\item Ricordiamo il seguente fatto noto di geometria elementare: un punto $P$ sta sulla circonferenza circoscritta ad un triangolo $ABC$ se e solo se le sue proiezioni sui lati $AB$, $BC$ e $CA$ sono allineate (su quella che si chiama \textit{retta di Simson}). 
+	
+	Usando questo fatto e l'esercizio 9 mostrare che l'equazione della circonferenza circoscritta al triangolo referenziale è
+	\begin{equation}
+	a^2yz+b^2xz+c^2xy=0.
+	\end{equation}
+	\item Mostrare che l'asse radicale fra la circonferenza circoscritta al triangolo referenziale e 
+		\begin{itemize}
+			\item la circonferenza di Feuerbach è $S_Ax+S_By+S_Cz=0$.
+			\item la circonferenza inscritta è $(p-a)^2x+(p-b)^2y+(p-c)^2z=0$, essendo $p=\displaystyle\frac{a+b+c}{2}$.
+		\end{itemize} 
+	\item \textbf{[Distanza fra due punti in baricentriche]} Siano $P=[u:v:w]$ e $Q=[u':v':w']$ le coordinate \textbf{baricentriche esatte} di due punti rispetto a un triangolo referenziale $ABC$.
+	\begin{itemize} 
+	\item Mostrare che
+	\begin{equation}
+	PQ^2=S_A(u-u')^2+S_B(v-v')^2+S_C(w-w')^2.
+	\end{equation}
+	\item Dato un generico punto $P=[u:v:w]$, mostrare che 
+	\begin{equation}
+	AP^2=\frac{c^2v^2+2S_Avw+b^2w^2}{(u+v+w)^2}
+	\end{equation}
+	e dedurre, ciclicamente, le espressioni per $BP^2$ e $CP^2$.
+	\end{itemize}
+	\item Mostrare che il coniugato isogonale del punto di Nagel (risp. Gergonne) è il centro di omotetia esterno (risp. interno) della circonferenza inscritta e circoscritta. 
+\end{enumerate}
+
+
+\subsection{Problemi}
+\begin{enumerate}
+	\item \textbf{[BMO 2009 - 2]} Sia $MN$ una segmento parallelo al lato $BC$ del triangolo $ABC$, con $M$ sul lato $AB$ e $N$ sul lato $AC$. Le rette $BN$ e $CM$ si incontrano in $P$. Le circonferenze circoscritte a $BMP$ e $CNP$ si incontrano in due punti distinti $P$ e $Q$. 
+	
+	Mostrare che $\angle BAQ = \angle PAC$.
+	
+	\textbf{Soluzione:} Diciamo che $a$ è l'origine del nostro piano di Gauss, mentre $b$ e $c$ sono due generici punti. Visto che $mn\parallel bc$ e $m\in ab$, $m\in ac$ si ha che esiste $\lambda \in \mathbb R$ tale che $m=\lambda b$ e $n=\lambda c$. Essendo $q$ il centro della rotomotetia che manda $m$ in $b$ e $c$ in $n$, allora 
+	$$
+	q=\frac{mn-bc}{m+n-b-c}=\frac{\lambda^2bc-bc}{\lambda b+\lambda c-b-c}=\frac{(\lambda+1)bc}{b+c}.
+	$$
+	
+	Per trovare trovare $p$ basterebbe imporre $p\in mc$ e $p\in bn$. \emph{Proporlo come esercizio}. D'altra parte non ce n'è bisogno: infatti noi siamo interessati poi solo all'angolo $\angle CAP$ e dunque non tanto ci servono le coordinate di $P$ quanto capire chi è la retta $AP$, che è la mediana di $ABC$. Dunque possiamo dire che esiste un certo $\eta$ reale tale che 
+	$$
+	p=\eta(b+c).
+	$$ 
+	
+	Per l'equazione dell'angolo, se $\theta=\angle BAQ$ si ha 
+	$$
+	e^{2i\theta}=\frac{q-a}{b-a}\frac{\bar b-\bar a}{\bar q-\bar a}=\frac{c(\bar b+\bar c)}{\bar c(b+c)},
+	$$
+	mentre se $\theta'=\angle PAC$ si ha 
+	$$
+	e^{2i\theta'}=\frac{c-a}{p-a}\frac{\bar p-\bar a}{\bar c-\bar a}=\frac{c(\bar b+\bar c)}{\bar c(b+c)}.
+	$$
+	
+	Da ciò, con un attimo di discussione, si ottiene che $\theta=\theta'$ che implica la tesi. 
+	
+	\item \textbf{[RMM 2012 - 2]} Sia $ABC$ un triangolo non isoscele e siano $D$, $E$ e $F$ rispettivamente i punti medi dei lati $BC$, $CA$ e $AB$. La circonferenza $BCF$ e la retta $BE$ si intersecano nuovamente in $P$ e la circonferenza $ABE$ e la retta $AD$ in $Q$. Le rette $DP$ e $FQ$ si incontrano in $R$. 
+	
+	Mostrare che il baricentro $G$ del triangolo $ABC$ giace sulla circonferenza circoscritta al triangolo $PQR$.
+	
+	\textbf{Soluzione:} Per mostrare la ciclità è sufficiente mostrare che, detto $\theta=\angle GPD$ e $\theta'=\angle GQF$, si ha 
+	$$
+	\theta=\theta'.
+	$$  
+	Dall'equazione dell'angolo risulta che per fare ciò è sufficiente mostrare
+	$$
+	\frac{d-p}{g-p}\frac{g-q}{f-q}\in\mathbb R.
+	$$
+	Il problema è dunque spostato a trovare i punti $p$ e $q$. Qui usiamo un'osservazione sintetica. Si ha che 
+	$$
+	\angle GDE=\angle GAB = \angle QEG,
+	$$
+	dove la prima è vera per il parallelismo $AB\parallel ED$ e la seconda è vera poiché $ABEQ$ è ciclico. 
+	Analogamente si ha $\angle EQD=\angle GED$ e dunque i triangoli $GDE$ e $GEQ$ sono ordinatamente simili.
+	Dunque, scegliendo $g=0$, risulta, visto che $GD\cdot GQ=GE^2$,
+	$$
+	q=d\frac{|e|^2}{|d|^2}=\frac{e\bar e}{\bar d}
+	$$
+	e analogamente 
+	$$
+	p=\frac{f\bar f}{\bar e}.
+	$$
+	A questo punto 
+	$$
+	\frac{d-p}{g-p}\frac{g-q}{f-q}=\frac{(d\bar e-f\bar f)e\bar e}{(f\bar d-e\bar e)f\bar f}
+	$$
+	e poiché, essendo $g=0$, si ha $d+e+f=0$, la precedente espressione è uguale a 
+	$$
+	\frac{|e|^2}{|f|^2}
+	$$ 
+	che è un numero reale, come si voleva.
+%	Dall'equazione dell'angolo si ha 
+%	$$
+%	e^{2i\theta}=\frac{d-p}{g-p}\frac{\bar g-\bar p}{\bar d-\bar p}%=\frac{f\bar f-d\bar e}{f\bar f-\bar d e}
+%	$$
+%	e 
+%	$$
+%	e^{2i\theta'}=\frac{f-q}{g-q}\frac{\bar g-\bar q}{\bar f-\bar q}%=\frac{e\bar e-f\bar d}{e\bar e-\bar f d}.
+%	$$
+%	Per mostrare che $e^{2i\theta}=e^{2i\theta'}$, e dunque $\theta=\theta'$ e dunque la tesi, è sufficiente mostrare che 
+	
+	che segue poiché $d+e+f=0$, essendo $g=0$, e sostituendo. 
+	
+	
+	\item \textbf{[USAMO 2016 - Day 2 - 2]} Un pentagono equilatero $AMNPQ$ è inscritto in un triangolo $ABC$ in modo che $M\in AB$, $Q\in AC$ e $N,p \in BC$. Sia $S$ l'intersezione di $MN$ e $PQ$ e denotiamo con $l$ la bisettrice di $\angle MSQ$. 
+	
+	Mostrare che, detto $I$ l'incentro di $ABC$, $OI$ è parallelo a $l$.
+	\item \textbf{[IMO 2008 - 6]} Sia $ABCD$ un quadrilatero convesso con $BA \neq BC$. Siano $\omega_1$ e $\omega_2$ le circonferenze inscritte ai triangoli $ABC$ e $ADC$ rispettivamente. Supponiamo che esista una circonferenza $\omega$ tangente alla retta $BA$ oltre A, alla retta $BC$ oltre $C$, alla retta $AD$ e alla retta $CD$.
+	
+	Mostrare che le tangenti esterne comuni a $\omega_1$ e $\omega_2$ si intersecano su $\omega$.
+	
+	\item \textbf{[BMO 2015 - 2]} Sia $ABC$ un triangolo scaleno con incentro $I$ e circonferenza circoscritta $\omega$. $AI$, $BI$ e $CI$ intersecano $\omega$ di nuovo nei punti $D$, $E$ e $F$ rispettivamente. Le rette parallele a $BC$, $CA$ e $AB$ condotte da $I$ intersecano $EF$, $DF$ e $DE$ rispettivamente nei punti $K$, $L$ e $M$.
+	
+	Mostrare che $K$, $L$ e $M$ sono allineati.
+	
+	\item \textbf{[IMO 2012 - 1]} Dato un triangolo $ABC$, sia $J$ il centro della circonferenza ex-inscritta opposta al vertice $A$, la quale tange $BC$ in $M$ e le rette $AB$ e $AC$ in $K$ e $L$ rispettivamente. Le rette $LM$ e $BJ$ si intersecano in $F$ e le rette $KM$ e $CJ$ si intersecano in $G$. Sia $S$ il punto d'intersezione fra $AF$ e $BC$ e sia $T$ il punto d'intersezione fra $AG$ e $BC$. 
+	
+	Mostrare che $M$ è il punto medio di $ST$.
+	
+	\textbf{Soluzione:}
+	
+	\item \textbf{[IMO SL 2011 - 4]} Sia $ABC$ un triangolo acutangolo scaleno, e sia $\gamma$ la sua circonferenza circoscritta.
+	Siano $A_0$ il punto medio di BC, $B_0$ il punto medio di $AC$ e $C_0$ il punto medio di $AB$. Sia
+	$D$ il piede dell’altezza uscente da $A$, $D_0$ la proiezione di $A_0$ sulla retta $B_0C_0$ e $G$ il
+	baricentro di $ABC$. Sia $\gamma_1$ la circonferenza passante per $B_0$ e $C_0$, e tangente a $\gamma$ in un
+	punto $P$ diverso da $A$.
+	\begin{itemize}
+	\item Dimostrare che la retta $B_0C_0$ e le tangenti a $\gamma$ nei punti $A$ e $P$ sono concorrenti.
+	\item Dimostrare che i punti $D_0$, $G$, $D$, e $P$ sono allineati.
+	\end{itemize}
+	\item \textbf{[USA TST 2012 - December Test - 1]} In un triangolo acutangolo $ABC$ si ha $\angle A<\angle B$ e $\angle A<\angle C$. Sia $P$ un punto variabile su $BC$. I punti $D$ e $E$ giacciono su $AB$ e $AC$ rispettivamente in modo che $BP=PD$ e $CP=PE$.
+	
+	Mostrare che al variare di $P$ sul segmento $BC$, la circonferenza circoscritta al triangolo $ADE$ passa per un punto fisso oltre $A$.
+	\item  \textbf{[IMO 2019 - 6]} 
+	Sia $I$ l'incentro di un triangolo acutangolo $ABC$ con $AB\neq AC$. La circonferenza inscritta $\omega$ di $ABC$ è tangente a $BC$, $CA$ e $AB$ in $D$, $E$ e $F$ rispettivamente. La retta per $D$ e perpendicolare ad $EF$ interseca $\omega$ di nuovo in $R$ e la retta $AR$ interseca $\omega$ di nuovo in $P$. Sia $Q$ la seconda intersezione, diversa da $P$, delle circonferenze circoscritte ai triangoli $PBF$ e $PCE$.
+	
+	Mostrare che le rette $DI$ e $PQ$ si incontrano su una retta per $A$ perpendicolare ad $AI$.
+	
+	\textbf{Soluzione:} Usare come circonferenza unitaria la circonferenza inscritta. Consulta \url{https://artofproblemsolving.com/community/c6h1876745p12752769}.
+	
+	\item \textbf{[MOP 2006]} Sia $ABC$ un triangolo inscritto in una circonferenza $\omega$. $P$ giace su $BC$ in modo tale che $PA$ è tangente a $\omega$. La bisettrice di $\angle APB$ interseca i segmenti $AB$ e $AC$ rispettivamente in $D$ ed $E$ e i segmenti $BE$ e $CD$ si intersecano in $Q$. Supponiamo che la retta $PQ$ passi per il centro di $\omega$. 
+	
+	Calcolare $\angle BAC$.
+	
+	\item \textbf{[USAMO 2001]} Sia $ABC$ un triangolo di circonferenza inscritta $\omega$. Siano $D_1$ ed $E_1$ i punti in cui $\omega$ tange $BC$ e $AC$ rispettivamente. Siano $D_2$ ed $E_2$ i punti sui lati $BC$ e $AC$ rispettivamente tali che $CD_2=BD_1$ e $CE_2=AE_1$ e sia $P$ il punto d'intersezione dei segmenti $AD_2$ e $BE_2$. La circonferenza $\omega$ interseca il segmento $AD_2$ in due punti, il più vicino dei quali al vertice $A$ sia detto $Q$. 
+	
+	Mostrare che $AQ=D_2P$.
+	
+	\textbf{Soluzione:} Scrivere tutti i punti in coordinate baricentriche normalizzate. Per trovare $Q$ notare che $I$ è il punto medio di $QD_1$. Infine per mostrare $AQ=D_2P$ usare i displacement dati i punti con le coordinate normalizzate. 
+	
+
+\end{enumerate}
